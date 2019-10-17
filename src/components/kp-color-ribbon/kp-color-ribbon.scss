@@ -1,0 +1,97 @@
+.kp-color-ribbon {
+  --kp-color-ribbon-columns: #{rem(34)} 1fr 1fr 1fr;
+  --kp-color-ribbon-row-gap: #{rem(0)};
+  --kp-color-ribbon-padding: #{rem(8)};
+  --kp-color-ribbon-bg-color: #ffffff;
+  --kp-color-ribbon-border-radius: #{rem(3)};
+  --kp-color-ribbon-box-shadow: 0 #{rem(10)} #{rem(40)} #{rem(-10)} rgba(0, 64, 128, 0.12);
+  --kp-color-ribbon-label-font-size: #{rem(12)};
+  --kp-color-ribbon-label-bg-color: var(--highlight-bg-color--neutral);
+
+  &.isCard {
+    --kp-color-ribbon-columns: 1fr;
+    --kp-color-ribbon-row-gap: #{rem(8)};
+    --kp-color-ribbon-padding: #{rem(16)};
+    --kp-color-ribbon-bg-color: #ffffff;
+    --kp-color-ribbon-border-radius: #{rem(3)};
+    --kp-color-ribbon-box-shadow: 0 #{rem(10)} #{rem(40)} #{rem(-10)} rgba(0, 64, 128, 0.12);
+    --kp-color-ribbon-label-font-size: #{rem(12)};
+    --kp-color-ribbon-label-bg-color: var(--highlight-bg-color--neutral);
+  }
+
+  display: grid;
+  padding: var(--kp-color-ribbon-padding);
+  align-items: center;
+  grid-template-columns: var(--kp-color-ribbon-columns);
+  background-color: var(--kp-color-ribbon-bg-color);
+  box-shadow: var(--kp-color-ribbon-box-shadow);
+  border-radius: var(--kp-color-ribbon-border-radius);
+  row-gap: var(--kp-color-ribbon-row-gap);
+
+  span {
+    &:before {
+      padding: rem(5) rem(8);
+      margin-right: rem(12);
+      font-size: var(--kp-color-ribbon-label-font-size);
+      font-weight: var(--font-weight--bold);
+      text-transform: uppercase;
+      background-color: var(--kp-color-ribbon-label-bg-color);
+      border-radius: rem(3);
+    }
+  }
+
+  // Color chip
+  &__chip {
+    width: rem(32);
+    height: rem(32);
+    background-color: var(--kp-color-ribbon-label-bg-color);
+    border-radius: var(--border-radius, rem(3));
+
+    .isCard & {
+      width: 100%;
+    }
+  }
+
+  // Name
+  &__name {
+    padding-right: rem(16);
+    padding-left: rem(8);
+    text-transform: capitalize;
+
+    &:before {
+      content: "Name";
+    }
+
+    .isCard & {
+      padding: 0;
+    }
+  }
+
+  // Hex value
+  &__hex-value {
+    padding-right: rem(16);
+    padding-left: rem(8);
+
+    &:before {
+      content: "Hex";
+    }
+
+    .isCard & {
+      padding: 0;
+    }
+  }
+
+  // Rgb value
+  &__rgb-value {
+    padding-right: rem(16);
+    padding-left: rem(8);
+
+    &:before {
+      content: "RGB";
+    }
+
+    .isCard & {
+      padding: 0;
+    }
+  }
+}
