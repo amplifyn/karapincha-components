@@ -1,4 +1,9 @@
 export declare class KpColorPalette {
-    colors: any;
+    colors: {
+        hex: string;
+        name: string;
+        rgb: string;
+        weight: string;
+    }[];
     render(): any;
 }
