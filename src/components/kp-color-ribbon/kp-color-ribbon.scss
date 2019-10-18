@@ -6,13 +6,12 @@
   --kp-color-ribbon-border-radius: #{rem(3)};
   --kp-color-ribbon-box-shadow: 0 #{rem(10)} #{rem(40)} #{rem(-10)} rgba(0, 64, 128, 0.12);
   --kp-color-ribbon-label-font-size: #{rem(12)};
-  --kp-color-ribbon-label-bg-color: var(--highlight-bg-color--neutral, #f3f4f6);
+  --kp-color-ribbon-label-bg-color: #f3f4f6;
 
   &.isCard {
     --kp-color-ribbon-columns: 1fr;
     --kp-color-ribbon-row-gap: #{rem(8)};
     --kp-color-ribbon-padding: #{rem(16)} #{rem(16)} #{rem(24)};
-    --kp-color-ribbon-bg-color: #ffffff;
     --kp-color-ribbon-border-radius: #{rem(3)};
     --kp-color-ribbon-box-shadow: 0 #{rem(10)} #{rem(40)} #{rem(-10)} rgba(0, 64, 128, 0.12);
     --kp-color-ribbon-label-font-size: #{rem(12)};

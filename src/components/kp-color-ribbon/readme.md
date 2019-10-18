@@ -7,10 +7,13 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                                                                                                                                                       | Default                                                                                                                                                                                                  |
-| -------- | --------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `color`  | --        |             | `{ "name": string; "weight": string; "hex": string; "rgb": { "r": number; "g": number; "b": number; }; "distance": number; "luminance": number; "requestedHex": string; }` | `{     "name": "Lead",     "weight": "L500",     "hex": "#212121",     "rgb": { "r": 33, "g": 33, "b": 33 },     "distance": 0,     "luminance": 22.062320231562225,     "requestedHex": "#212121",   }` |
-| `isCard` | `is-card` |             | `boolean`                                                                                                                                                                  | `false`                                                                                                                                                                                                  |
+| Property      | Attribute      | Description | Type      | Default                |
+| ------------- | -------------- | ----------- | --------- | ---------------------- |
+| `colorHex`    | `color-hex`    |             | `string`  | `'#f3f4f6'`            |
+| `colorName`   | `color-name`   |             | `string`  | `'Sample Color ⚠️'`    |
+| `colorRgb`    | `color-rgb`    |             | `string`  | `'rgb(243, 244, 246)'` |
+| `colorWeight` | `color-weight` |             | `string`  | `'SC500'`              |
+| `isCard`      | `is-card`      |             | `boolean` | `false`                |
 
 
 ----------------------------------------------

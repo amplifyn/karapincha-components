@@ -1,0 +1,1 @@
+System.register(["./p-ee7d6417.system.js"],(function(){"use strict";var o,r;return{setters:[function(e){o=e.p;r=e.b}],execute:function(){o().then((function(o){return r([["p-gaupr1h9.system",[[0,"kp-color-ribbon",{isCard:[4,"is-card"],colorName:[1,"color-name"],colorRgb:[1,"color-rgb"],colorWeight:[1,"color-weight"],colorHex:[1,"color-hex"]}]]]],o)}))}}}));

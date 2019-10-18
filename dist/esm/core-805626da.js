@@ -1,24 +1,3 @@
-'use strict';
-
-function _interopNamespace(e) {
-  if (e && e.__esModule) { return e; } else {
-    var n = {};
-    if (e) {
-      Object.keys(e).forEach(function (k) {
-        var d = Object.getOwnPropertyDescriptor(e, k);
-        Object.defineProperty(n, k, d.get ? d : {
-          enumerable: true,
-          get: function () {
-            return e[k];
-          }
-        });
-      });
-    }
-    n['default'] = e;
-    return n;
-  }
-}
-
 const NAMESPACE = 'karapincha';
 
 let queueCongestion = 0;
@@ -69,11 +48,11 @@ const loadModule = (cmpMeta, hostRef, hmrVersionId) => {
     if (module) {
         return module[exportName];
     }
-    return new Promise(function (resolve) { resolve(_interopNamespace(require(
+    return import(
     /* webpackInclude: /\.entry\.js$/ */
     /* webpackExclude: /\.system\.entry\.js$/ */
     /* webpackMode: "lazy" */
-    `./${bundleId}.entry.js${ ''}`))); }).then(importedModule => {
+    `./${bundleId}.entry.js${ ''}`).then(importedModule => {
         {
             moduleCache.set(bundleId, importedModule);
         }
@@ -182,7 +161,7 @@ const patchEsm = () => {
     // @ts-ignore
     if ( !(win.CSS && win.CSS.supports && win.CSS.supports('color', 'var(--c)'))) {
         // @ts-ignore
-        return new Promise(function (resolve) { resolve(require('./css-shim-978387b1-52a5db49.js')); }).then(() => {
+        return import('./css-shim-978387b1-1e75855f.js').then(() => {
             plt.$cssShim$ = win.__stencil_cssshim;
             if (plt.$cssShim$) {
                 return plt.$cssShim$.initShim();
@@ -196,7 +175,7 @@ const patchBrowser = async () => {
         plt.$cssShim$ = win.__stencil_cssshim;
     }
     // @ts-ignore
-    const importMeta = (typeof document === 'undefined' ? new (require('u' + 'rl').URL)('file:' + __filename).href : (document.currentScript && document.currentScript.src || new URL('core-b165479f.js', document.baseURI).href));
+    const importMeta = "";
     const regex = new RegExp(`\/${NAMESPACE}(\\.esm)?\\.js($|\\?|#)`);
     const scriptElm = Array.from(doc.querySelectorAll('script')).find(s => (regex.test(s.src) ||
         s.getAttribute('data-stencil-namespace') === NAMESPACE));
@@ -209,7 +188,7 @@ const patchBrowser = async () => {
         patchDynamicImport(resourcesUrl.href);
         if (!window.customElements) {
             // @ts-ignore
-            await new Promise(function (resolve) { resolve(require('./dom-96781eef-e2cadb44.js')); });
+            await import('./dom-96781eef-a2fb04dd.js');
         }
         return Object.assign(Object.assign({}, opts), { resourcesUrl: resourcesUrl.href });
     }
@@ -251,6 +230,11 @@ const parsePropertyValue = (propValue, propType) => {
             // per the HTML spec, any string value means it is a boolean true value
             // but we'll cheat here and say that the string "false" is the boolean false
             return (propValue === 'false' ? false : propValue === '' || !!propValue);
+        }
+        if ( propType & 1 /* String */) {
+            // could have been passed as a number or boolean
+            // but we still want it as a string
+            return String(propValue);
         }
         // redundant return here for better minification
         return propValue;
@@ -761,7 +745,6 @@ const updateComponent = (elm, hostRef, cmpMeta, instance, isInitialLoad) => {
 };
 const postUpdateComponent = (elm, hostRef, cmpMeta) => {
     const endPostUpdate = createTime('postUpdate', cmpMeta.$tagName$);
-    const instance =  hostRef.$lazyInstance$ ;
     const ancestorComponent = hostRef.$ancestorComponent$;
     if (!(hostRef.$flags$ & 64 /* hasLoadedComponent */)) {
         hostRef.$flags$ |= 64 /* hasLoadedComponent */;
@@ -769,9 +752,6 @@ const postUpdateComponent = (elm, hostRef, cmpMeta) => {
             // DOM WRITE!
             // add the css class that this element has officially hydrated
             elm.classList.add(HYDRATED_CLASS);
-        }
-        {
-            safeCall(instance, 'componentDidLoad');
         }
         endPostUpdate();
         {
@@ -817,17 +797,6 @@ const appDidLoad = (who) => {
     {
         plt.$flags$ |= 2 /* appLoaded */;
     }
-};
-const safeCall = (instance, method, arg) => {
-    if (instance && instance[method]) {
-        try {
-            return instance[method](arg);
-        }
-        catch (e) {
-            consoleError(e);
-        }
-    }
-    return undefined;
 };
 const then = (promise, thenFn) => {
     return promise && promise.then ? promise.then(thenFn) : thenFn();
@@ -1107,9 +1076,4 @@ const bootstrapLazy = (lazyBundles, options = {}) => {
     endBootstrap();
 };
 
-exports.Host = Host;
-exports.bootstrapLazy = bootstrapLazy;
-exports.h = h;
-exports.patchBrowser = patchBrowser;
-exports.patchEsm = patchEsm;
-exports.registerInstance = registerInstance;
+export { Host as H, patchEsm as a, bootstrapLazy as b, h, patchBrowser as p, registerInstance as r };

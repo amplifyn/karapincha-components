@@ -6,16 +6,10 @@ export const config: Config = {
   globalStyle: 'src/styles/global.scss',
   outputTargets: [
     {
-      type: 'dist',
-      esmLoaderPath: '../loader'
+      type: 'dist'
     },
     {
-      type: 'docs-readme'
-    },
-    {
-      type: 'www',
-      baseUrl: 'https://karapincha.amplifyn.io/',
-      serviceWorker: null
+      type: 'www'
     }
   ],
   plugins: [

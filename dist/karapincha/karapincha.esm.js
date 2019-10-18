@@ -1,1 +1,1 @@
-import{p as o,b as r}from"./p-294f75ec.js";o().then(o=>r([["p-jfjbs3wh",[[0,"kp-color-ribbon",{color:[16],isCard:[4,"is-card"]}]]]],o));
+import{p as o,b as r}from"./p-c86598fe.js";o().then(o=>r([["p-zalehv7e",[[0,"kp-color-ribbon",{isCard:[4,"is-card"],colorName:[1,"color-name"],colorRgb:[1,"color-rgb"],colorWeight:[1,"color-weight"],colorHex:[1,"color-hex"]}]]]],o));

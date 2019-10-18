@@ -11,7 +11,10 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface KpColorRibbon {
-    'color': { "name": string; "weight": string; "hex": string; "rgb": { "r": number; "g": number; "b": number; }; "distance": number; "luminance": number; "requestedHex": string; };
+    'colorHex': string;
+    'colorName': string;
+    'colorRgb': string;
+    'colorWeight': string;
     'isCard': boolean;
   }
 }
@@ -31,7 +34,10 @@ declare global {
 
 declare namespace LocalJSX {
   interface KpColorRibbon {
-    'color'?: { "name": string; "weight": string; "hex": string; "rgb": { "r": number; "g": number; "b": number; }; "distance": number; "luminance": number; "requestedHex": string; };
+    'colorHex'?: string;
+    'colorName'?: string;
+    'colorRgb'?: string;
+    'colorWeight'?: string;
     'isCard'?: boolean;
   }
 
