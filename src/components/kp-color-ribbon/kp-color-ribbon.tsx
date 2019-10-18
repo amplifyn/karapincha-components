@@ -17,7 +17,8 @@ export class KpColorRibbon {
         <span class={{ 'kp-color-ribbon__chip': true }} style={{ 'background-color': this.colorHex.toUpperCase() }}></span>
         <span class={{ 'kp-color-ribbon__name': true }}>{this.colorWeight} - {this.colorName}</span>
         <span class={{ 'kp-color-ribbon__hex-value': true }}>{this.colorHex.toUpperCase()}</span>
-        <span class={{ 'kp-color-ribbon__rgb-value': true }}>{this.colorRgb}</span>
+
+        {this.isCard ? <span class={{ 'kp-color-ribbon__rgb-value': true }}>{this.colorRgb}</span> : false}
       </Host>
     );
   }

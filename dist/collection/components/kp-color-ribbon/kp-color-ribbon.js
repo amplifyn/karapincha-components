@@ -15,7 +15,7 @@ export class KpColorRibbon {
                 " - ",
                 this.colorName),
             h("span", { class: { 'kp-color-ribbon__hex-value': true } }, this.colorHex.toUpperCase()),
-            h("span", { class: { 'kp-color-ribbon__rgb-value': true } }, this.colorRgb)));
+            this.isCard ? h("span", { class: { 'kp-color-ribbon__rgb-value': true } }, this.colorRgb) : false));
     }
     static get is() { return "kp-color-ribbon"; }
     static get originalStyleUrls() { return {

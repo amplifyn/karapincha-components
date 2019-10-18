@@ -1,8 +1,8 @@
 {
   "entries": [
-    "components/kp-code/kp-code.js",
     "components/kp-color-palette/kp-color-palette.js",
-    "components/kp-color-ribbon/kp-color-ribbon.js"
+    "components/kp-color-ribbon/kp-color-ribbon.js",
+    "components/kp-code/kp-code.js"
   ],
   "compiler": {
     "name": "@stencil/core",

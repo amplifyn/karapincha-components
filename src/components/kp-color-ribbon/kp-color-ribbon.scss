@@ -2,8 +2,7 @@
   /**
     * @prop --kp-color-ribbon-columns: `grid-template-columns` Number of columns.
     */
-  --kp-color-ribbon-columns: #{rem(34)} 1fr 1fr 1fr;
-  --kp-color-ribbon-row-gap: #{rem(0)};
+  --kp-color-ribbon-columns: #{rem(34)} 1fr #{rem(150)};
   --kp-color-ribbon-padding: #{rem(8)};
   --kp-color-ribbon-bg-color: #ffffff;
   --kp-color-ribbon-border-radius: #{rem(3)};
@@ -13,21 +12,18 @@
 
   &.isCard {
     --kp-color-ribbon-columns: 1fr;
-    --kp-color-ribbon-row-gap: #{rem(8)};
     --kp-color-ribbon-padding: #{rem(16)} #{rem(16)} #{rem(24)};
     --kp-color-ribbon-border-radius: #{rem(3)};
     --kp-color-ribbon-box-shadow: 0 #{rem(10)} #{rem(40)} #{rem(-10)} rgba(0, 64, 128, 0.12);
     --kp-color-ribbon-label-font-size: #{rem(12)};
   }
 
-  display: grid;
+  display: flex;
   padding: var(--kp-color-ribbon-padding);
   align-items: center;
-  grid-template-columns: var(--kp-color-ribbon-columns);
   background-color: var(--kp-color-ribbon-bg-color);
   box-shadow: var(--kp-color-ribbon-box-shadow);
   border-radius: var(--kp-color-ribbon-border-radius);
-  row-gap: var(--kp-color-ribbon-row-gap);
 
   span {
     display: inline-flex;
@@ -46,6 +42,11 @@
   }
 
   &.isCard {
+    display: grid;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: rem(8);
+
     span:before {
       width: rem(60);
       justify-content: center;
@@ -69,7 +70,7 @@
   // Name
   &__name {
     padding-right: rem(16);
-    padding-left: rem(8);
+    padding-left: rem(16);
     text-transform: capitalize;
 
     &:before {
@@ -83,8 +84,8 @@
 
   // Hex value
   &__hex-value {
-    padding-right: rem(16);
-    padding-left: rem(8);
+    padding-left: rem(16);
+    margin-left: auto;
 
     &:before {
       content: "Hex";
@@ -92,13 +93,14 @@
 
     .isCard & {
       padding: 0;
+      margin-left: unset;
     }
   }
 
-  // Rgb value
+  // RGB value
   &__rgb-value {
-    padding-right: rem(16);
-    padding-left: rem(8);
+    padding-left: rem(16);
+    margin-left: auto;
 
     &:before {
       content: "RGB";
@@ -106,6 +108,7 @@
 
     .isCard & {
       padding: 0;
+      margin-left: unset;
     }
   }
 }

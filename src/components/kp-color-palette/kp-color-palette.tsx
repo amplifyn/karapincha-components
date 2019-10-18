@@ -1,35 +1,30 @@
-import { Component, h, Host, Prop } from '@stencil/core';
-import '@deckdeckgo/highlight-code';
+import { Component, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'kp-color-palette',
   styleUrl: 'kp-color-palette.scss'
 })
 export class KpColorPalette {
-  @Prop() colors: any;
-
-  componentDidLoad() {
-    this.colors = [
-      {
-        hex: '#f3f4f6',
-        name: 'Sample Color ⚠️',
-        rgb: 'rgb(243, 244, 246)',
-        weight: 'SC500'
-      },
-      {
-        hex: '#000000',
-        name: 'Black ⚠️',
-        rgb: 'rgb(0, 0, 0)',
-        weight: 'B500'
-      },
-      {
-        hex: '#ffffff',
-        name: 'White ⚠️',
-        rgb: 'rgb(255, 255, 255)',
-        weight: 'W500'
-      }
-    ]
-  }
+  colors: any = [
+    {
+      hex: '#f3f4f6',
+      name: 'Sample Color ⚠️',
+      rgb: 'rgb(243, 244, 246)',
+      weight: 'SC500'
+    },
+    {
+      hex: '#000000',
+      name: 'Black ⚠️',
+      rgb: 'rgb(0, 0, 0)',
+      weight: 'B500'
+    },
+    {
+      hex: '#ffffff',
+      name: 'White ⚠️',
+      rgb: 'rgb(255, 255, 255)',
+      weight: 'W500'
+    }
+  ];
 
   render() {
     return (

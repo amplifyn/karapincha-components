@@ -5,5 +5,19 @@
 // @import "./base/_form-controls";
 
 body {
-  padding: 4em;
+  padding: 4em 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  padding-right: 48px / 2;
+  padding-left: 48px / 2;
+  margin-right: auto;
+  margin-bottom: 60px;
+  margin-left: auto;
+  width: 100%;
+  max-width: 768px;
+  min-height: 100vh;
+  flex-direction: column;
 }

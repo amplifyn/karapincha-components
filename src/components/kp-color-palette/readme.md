@@ -5,13 +5,6 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property | Attribute | Description | Type  | Default     |
-| -------- | --------- | ----------- | ----- | ----------- |
-| `colors` | `colors`  |             | `any` | `undefined` |
-
-
 ## Dependencies
 
 ### Depends on

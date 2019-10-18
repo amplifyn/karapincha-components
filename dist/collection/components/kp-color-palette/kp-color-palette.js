@@ -1,6 +1,6 @@
 import { h, Host } from "@stencil/core";
 export class KpColorPalette {
-    componentDidLoad() {
+    constructor() {
         this.colors = [
             {
                 hex: '#f3f4f6',
@@ -47,24 +47,5 @@ export class KpColorPalette {
     }; }
     static get styleUrls() { return {
         "$": ["kp-color-palette.css"]
-    }; }
-    static get properties() { return {
-        "colors": {
-            "type": "any",
-            "mutable": false,
-            "complexType": {
-                "original": "any",
-                "resolved": "any",
-                "references": {}
-            },
-            "required": false,
-            "optional": false,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "attribute": "colors",
-            "reflect": false
-        }
     }; }
 }
