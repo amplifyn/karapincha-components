@@ -1,11 +1,11 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
   tag: 'kp-color-palette',
   styleUrl: 'kp-color-palette.scss'
 })
 export class KpColorPalette {
-  colors: any = [
+  @Prop() colors: any = [
     {
       hex: '#f3f4f6',
       name: 'Sample Color ⚠️',

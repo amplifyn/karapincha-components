@@ -48,4 +48,24 @@ export class KpColorPalette {
     static get styleUrls() { return {
         "$": ["kp-color-palette.css"]
     }; }
+    static get properties() { return {
+        "colors": {
+            "type": "any",
+            "mutable": false,
+            "complexType": {
+                "original": "any",
+                "resolved": "any",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "colors",
+            "reflect": false,
+            "defaultValue": "[\n    {\n      hex: '#f3f4f6',\n      name: 'Sample Color \u26A0\uFE0F',\n      rgb: 'rgb(243, 244, 246)',\n      weight: 'SC500'\n    },\n    {\n      hex: '#000000',\n      name: 'Black \u26A0\uFE0F',\n      rgb: 'rgb(0, 0, 0)',\n      weight: 'B500'\n    },\n    {\n      hex: '#ffffff',\n      name: 'White \u26A0\uFE0F',\n      rgb: 'rgb(255, 255, 255)',\n      weight: 'W500'\n    }\n  ]"
+        }
+    }; }
 }

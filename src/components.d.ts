@@ -11,7 +11,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface KpCode {}
-  interface KpColorPalette {}
+  interface KpColorPalette {
+    'colors': any;
+  }
   interface KpColorRibbon {
     'colorHex': string;
     'colorName': string;
@@ -50,7 +52,9 @@ declare global {
 
 declare namespace LocalJSX {
   interface KpCode {}
-  interface KpColorPalette {}
+  interface KpColorPalette {
+    'colors'?: any;
+  }
   interface KpColorRibbon {
     'colorHex'?: string;
     'colorName'?: string;
