@@ -30,6 +30,9 @@
   row-gap: var(--kp-color-ribbon-row-gap);
 
   span {
+    display: inline-flex;
+    align-items: center;
+
     &:before {
       display: inline-flex;
       padding: rem(5) rem(8);

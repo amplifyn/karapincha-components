@@ -21,5 +21,6 @@ export const config: Config = {
       outputStyle: 'compressed'
     })
   ],
-  enableCache: false
+  enableCache: false,
+  hashFileNames: false
 };

@@ -10,6 +10,10 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface KpCode {}
+  interface KpColorPalette {
+    'colors': any;
+  }
   interface KpColorRibbon {
     'colorHex': string;
     'colorName': string;
@@ -22,17 +26,35 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLKpCodeElement extends Components.KpCode, HTMLStencilElement {}
+  const HTMLKpCodeElement: {
+    prototype: HTMLKpCodeElement;
+    new (): HTMLKpCodeElement;
+  };
+
+  interface HTMLKpColorPaletteElement extends Components.KpColorPalette, HTMLStencilElement {}
+  const HTMLKpColorPaletteElement: {
+    prototype: HTMLKpColorPaletteElement;
+    new (): HTMLKpColorPaletteElement;
+  };
+
   interface HTMLKpColorRibbonElement extends Components.KpColorRibbon, HTMLStencilElement {}
   const HTMLKpColorRibbonElement: {
     prototype: HTMLKpColorRibbonElement;
     new (): HTMLKpColorRibbonElement;
   };
   interface HTMLElementTagNameMap {
+    'kp-code': HTMLKpCodeElement;
+    'kp-color-palette': HTMLKpColorPaletteElement;
     'kp-color-ribbon': HTMLKpColorRibbonElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface KpCode {}
+  interface KpColorPalette {
+    'colors'?: any;
+  }
   interface KpColorRibbon {
     'colorHex'?: string;
     'colorName'?: string;
@@ -42,6 +64,8 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'kp-code': KpCode;
+    'kp-color-palette': KpColorPalette;
     'kp-color-ribbon': KpColorRibbon;
   }
 }
@@ -52,6 +76,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'kp-code': LocalJSX.KpCode & JSXBase.HTMLAttributes<HTMLKpCodeElement>;
+      'kp-color-palette': LocalJSX.KpColorPalette & JSXBase.HTMLAttributes<HTMLKpColorPaletteElement>;
       'kp-color-ribbon': LocalJSX.KpColorRibbon & JSXBase.HTMLAttributes<HTMLKpColorRibbonElement>;
     }
   }

@@ -26,6 +26,8 @@
     "@stencil/core": "^1.7.2",
     "@stencil/sass": "^1.1.0",
     "@types/node": "^12.11.1",
+    "@types/prismjs": "^1.16.0",
+    "requirejs": "^2.3.6",
     "workbox-build": "4.3.1"
   },
   "license": "MIT",

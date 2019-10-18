@@ -1,5 +1,7 @@
 {
   "entries": [
+    "components/kp-color-palette/kp-color-palette.js",
+    "components/kp-code/kp-code.js",
     "components/kp-color-ribbon/kp-color-ribbon.js"
   ],
   "compiler": {
@@ -7,6 +9,13 @@
     "version": "1.7.2",
     "typescriptVersion": "3.6.3"
   },
-  "collections": [],
+  "collections": [
+    {
+      "name": "@deckdeckgo/highlight-code",
+      "tags": [
+        "deckgo-highlight-code"
+      ]
+    }
+  ],
   "bundles": []
 }

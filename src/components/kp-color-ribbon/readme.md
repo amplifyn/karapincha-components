@@ -16,6 +16,19 @@
 | `isCard`      | `is-card`      |             | `boolean` | `false`                |
 
 
+## Dependencies
+
+### Used by
+
+ - [kp-color-palette](../kp-color-palette)
+
+### Graph
+```mermaid
+graph TD;
+  kp-color-palette --> kp-color-ribbon
+  style kp-color-ribbon fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
