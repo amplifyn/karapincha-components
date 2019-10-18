@@ -196,7 +196,7 @@ const patchBrowser = async () => {
         plt.$cssShim$ = win.__stencil_cssshim;
     }
     // @ts-ignore
-    const importMeta = (typeof document === 'undefined' ? new (require('u' + 'rl').URL)('file:' + __filename).href : (document.currentScript && document.currentScript.src || new URL('core-c4c5a6e0.js', document.baseURI).href));
+    const importMeta = (typeof document === 'undefined' ? new (require('u' + 'rl').URL)('file:' + __filename).href : (document.currentScript && document.currentScript.src || new URL('core-b165479f.js', document.baseURI).href));
     const regex = new RegExp(`\/${NAMESPACE}(\\.esm)?\\.js($|\\?|#)`);
     const scriptElm = Array.from(doc.querySelectorAll('script')).find(s => (regex.test(s.src) ||
         s.getAttribute('data-stencil-namespace') === NAMESPACE));
@@ -761,6 +761,7 @@ const updateComponent = (elm, hostRef, cmpMeta, instance, isInitialLoad) => {
 };
 const postUpdateComponent = (elm, hostRef, cmpMeta) => {
     const endPostUpdate = createTime('postUpdate', cmpMeta.$tagName$);
+    const instance =  hostRef.$lazyInstance$ ;
     const ancestorComponent = hostRef.$ancestorComponent$;
     if (!(hostRef.$flags$ & 64 /* hasLoadedComponent */)) {
         hostRef.$flags$ |= 64 /* hasLoadedComponent */;
@@ -768,6 +769,9 @@ const postUpdateComponent = (elm, hostRef, cmpMeta) => {
             // DOM WRITE!
             // add the css class that this element has officially hydrated
             elm.classList.add(HYDRATED_CLASS);
+        }
+        {
+            safeCall(instance, 'componentDidLoad');
         }
         endPostUpdate();
         {
@@ -813,6 +817,17 @@ const appDidLoad = (who) => {
     {
         plt.$flags$ |= 2 /* appLoaded */;
     }
+};
+const safeCall = (instance, method, arg) => {
+    if (instance && instance[method]) {
+        try {
+            return instance[method](arg);
+        }
+        catch (e) {
+            consoleError(e);
+        }
+    }
+    return undefined;
 };
 const then = (promise, thenFn) => {
     return promise && promise.then ? promise.then(thenFn) : thenFn();

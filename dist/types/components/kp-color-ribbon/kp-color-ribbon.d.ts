@@ -14,5 +14,6 @@ export declare class KpColorRibbon {
     };
     isCard: boolean;
     private _colorRGB;
+    componentDidLoad(): void;
     render(): any;
 }

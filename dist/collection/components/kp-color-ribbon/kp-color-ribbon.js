@@ -13,6 +13,9 @@ export class KpColorRibbon {
         this.isCard = false;
         this._colorRGB = `rgb(${this.color.rgb.r}, ${this.color.rgb.g}, ${this.color.rgb.b})`;
     }
+    componentDidLoad() {
+        console.log(this.color);
+    }
     render() {
         return (h(Host, { class: { 'kp-color-ribbon': true, 'isCard': this.isCard } },
             h("span", { class: { 'kp-color-ribbon__chip': true }, style: { 'background-color': this.color.hex } }),

@@ -19,6 +19,10 @@ export class KpColorRibbon {
 
   private _colorRGB = `rgb(${this.color.rgb.r}, ${this.color.rgb.g}, ${this.color.rgb.b})`;
 
+  componentDidLoad() {
+    console.log(this.color);
+  }
+
   render() {
     return (
       <Host class={{ 'kp-color-ribbon': true, 'isCard': this.isCard }}>

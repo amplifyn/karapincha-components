@@ -1,7 +1,7 @@
 {
-  "name": "karapincha",
-  "version": "0.0.3",
-  "description": "Karapincha web components library",
+  "name": "karapincha-dev",
+  "version": "0.0.5",
+  "description": "Karapincha web components library - DEV",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -19,7 +19,8 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "publish": "stencil build --docs && npm publish"
   },
   "devDependencies": {
     "@stencil/core": "^1.7.2",

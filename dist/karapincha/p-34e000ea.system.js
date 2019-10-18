@@ -1,1 +1,0 @@
-System.register(["./p-ebff07d4.system.js"],(function(){"use strict";var t,e;return{setters:[function(r){t=r.p;e=r.b}],execute:function(){t().then((function(t){return e([["p-ii5jkonw.system",[[0,"kp-color-ribbon",{color:[16],isCard:[4,"is-card"]}]]]],t)}))}}}));
