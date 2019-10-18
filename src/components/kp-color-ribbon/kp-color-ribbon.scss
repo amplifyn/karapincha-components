@@ -1,4 +1,7 @@
 .kp-color-ribbon {
+  /**
+    * @prop --kp-color-ribbon-columns: `grid-template-columns` Number of columns.
+    */
   --kp-color-ribbon-columns: #{rem(34)} 1fr 1fr 1fr;
   --kp-color-ribbon-row-gap: #{rem(0)};
   --kp-color-ribbon-padding: #{rem(8)};
