@@ -3,10 +3,9 @@
     * @prop --kp-color-ribbon-columns: `grid-template-columns` Number of columns.
     */
   --kp-color-ribbon-columns: #{rem(34)} 1fr #{rem(150)};
-  --kp-color-ribbon-padding: #{rem(8)};
+  --kp-color-ribbon-padding: #{rem(8)} #{rem(16)};
   --kp-color-ribbon-bg-color: #ffffff;
   --kp-color-ribbon-border-radius: #{rem(3)};
-  --kp-color-ribbon-box-shadow: 0 #{rem(10)} #{rem(40)} #{rem(-10)} rgba(0, 64, 128, 0.12);
   --kp-color-ribbon-label-font-size: #{rem(12)};
   --kp-color-ribbon-label-bg-color: #f3f4f6;
 
@@ -14,7 +13,6 @@
     --kp-color-ribbon-columns: 1fr;
     --kp-color-ribbon-padding: #{rem(16)} #{rem(16)} #{rem(24)};
     --kp-color-ribbon-border-radius: #{rem(3)};
-    --kp-color-ribbon-box-shadow: 0 #{rem(10)} #{rem(40)} #{rem(-10)} rgba(0, 64, 128, 0.12);
     --kp-color-ribbon-label-font-size: #{rem(12)};
   }
 
@@ -22,7 +20,6 @@
   padding: var(--kp-color-ribbon-padding);
   align-items: center;
   background-color: var(--kp-color-ribbon-bg-color);
-  box-shadow: var(--kp-color-ribbon-box-shadow);
   border-radius: var(--kp-color-ribbon-border-radius);
 
   span {

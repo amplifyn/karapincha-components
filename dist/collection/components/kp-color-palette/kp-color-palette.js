@@ -1,69 +1,43 @@
-import { h, Host } from "@stencil/core";
-export class KpColorPalette {
-    constructor() {
-        this.colors = [
-            {
-                hex: '#f3f4f6',
-                name: 'Sample Color ⚠️',
-                rgb: 'rgb(243, 244, 246)',
-                weight: 'SC500'
-            },
-            {
-                hex: '#000000',
-                name: 'Black ⚠️',
-                rgb: 'rgb(0, 0, 0)',
-                weight: 'B500'
-            },
-            {
-                hex: '#ffffff',
-                name: 'White ⚠️',
-                rgb: 'rgb(255, 255, 255)',
-                weight: 'W500'
-            }
-        ];
-    }
-    render() {
-        return (h(Host, { class: { "kp-color-palette": true } },
-            h("section", { class: { "kp-color-palette__ribbons": true } }, this.colors.map(color => h("kp-color-ribbon", { "color-hex": color.hex, "color-name": color.name, "color-rgb": color.rgb, "color-weight": color.weight }))),
-            h("section", { class: { "kp-color-palette__code": true } },
-                h("pre", { class: { 'kp-color-generator__code': true } },
-                    h("code", { class: { 'language-css': true } },
-                        (h("span", { class: { 'selector': true } }, ":root")),
-                        (h("span", { class: { 'punctuation': true } }, ` { \n`)),
-                        (h("span", { class: { 'comment': true } }, `  // \n`)),
-                        this.colors.map((color) => {
-                            return ([
-                                h("span", { class: "property" }, `  --color-${color.weight}`),
-                                h("span", { class: { 'punctuation': true } }, ": "),
-                                h("span", { class: "string" }, color.hex),
-                                h("span", { class: { 'punctuation': true } }, `;\n`)
-                            ]);
-                        }),
-                        (h("span", { class: { 'punctuation': true } }, `}`)))))));
-    }
-    static get is() { return "kp-color-palette"; }
-    static get originalStyleUrls() { return {
-        "$": ["kp-color-palette.scss"]
-    }; }
-    static get styleUrls() { return {
-        "$": ["kp-color-palette.css"]
-    }; }
-    static get properties() { return {
-        "colors": {
-            "type": "unknown",
-            "mutable": false,
-            "complexType": {
-                "original": "{ hex: string; name: string; rgb: string; weight: string; }[]",
-                "resolved": "{ hex: string; name: string; rgb: string; weight: string; }[]",
-                "references": {}
-            },
-            "required": false,
-            "optional": false,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "defaultValue": "[\n    {\n      hex: '#f3f4f6',\n      name: 'Sample Color \u26A0\uFE0F',\n      rgb: 'rgb(243, 244, 246)',\n      weight: 'SC500'\n    },\n    {\n      hex: '#000000',\n      name: 'Black \u26A0\uFE0F',\n      rgb: 'rgb(0, 0, 0)',\n      weight: 'B500'\n    },\n    {\n      hex: '#ffffff',\n      name: 'White \u26A0\uFE0F',\n      rgb: 'rgb(255, 255, 255)',\n      weight: 'W500'\n    }\n  ]"
-        }
-    }; }
-}
+// import { Component, h, Host, Prop, Watch, Element } from '@stencil/core';
+// @Component({
+//   tag: 'kp-color-palette',
+//   styleUrl: 'kp-color-palette.scss'
+// })
+// export class KpColorPalette {
+//   @Prop() colors: any;
+//   // @Element() el: HTMLElement;
+//   _colors: any[];
+//   componentDidLoad() {
+//     // this._colors = JSON.parse(this.colors);
+//     // console.log(this.el);
+//     // var cmp = document.querySelector('kp-color-palette');
+//     // console.log(cmp.colors);
+//   }
+//   render() {
+//     return (
+//       <Host class={{ "kp-color-palette": true }}>
+//         <section class={{ "kp-color-palette__ribbons": true }}>
+//           {this.colors.map(color => <kp-color-ribbon color-hex={color.hex} color-name={color.name} color-rgb={color.rgb} color-weight={color.weight}></kp-color-ribbon>)}
+//         </section>
+//         <section class={{ "kp-color-palette__code": true }}>
+//           <pre class={{ 'kp-color-generator__code': true }}>
+//             <code class={{ 'language-css': true }}>
+//               {(<span class={{ 'selector': true }}>:root</span>)}
+//               {(<span class={{ 'punctuation': true }}>{` { \n`}</span>)}
+//               {(<span class={{ 'comment': true }}>{`  // \n`}</span>)}
+//               {this.colors.map((color) => {
+//                 return ([
+//                   <span class="property">{`  --color-${color.weight}`}</span>,
+//                   <span class={{ 'punctuation': true }}>: </span>,
+//                   <span class="string">{color.hex}</span>,
+//                   <span class={{ 'punctuation': true }}>{`;\n`}</span>
+//                 ]);
+//               })}
+//               {(<span class={{ 'punctuation': true }}>{`}`}</span>)}
+//             </code>
+//           </pre>
+//         </section>
+//       </Host>
+//     );
+//   }
+// }

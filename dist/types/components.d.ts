@@ -10,9 +10,8 @@ import { HTMLStencilElement, JSXBase } from './stencil.core';
 
 
 export namespace Components {
-  interface KpCode {}
-  interface KpColorPalette {
-    'colors': { hex: string; name: string; rgb: string; weight: string; }[];
+  interface KpColorChip {
+    'color': string;
   }
   interface KpColorRibbon {
     'colorHex': string;
@@ -26,16 +25,10 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLKpCodeElement extends Components.KpCode, HTMLStencilElement {}
-  const HTMLKpCodeElement: {
-    prototype: HTMLKpCodeElement;
-    new (): HTMLKpCodeElement;
-  };
-
-  interface HTMLKpColorPaletteElement extends Components.KpColorPalette, HTMLStencilElement {}
-  const HTMLKpColorPaletteElement: {
-    prototype: HTMLKpColorPaletteElement;
-    new (): HTMLKpColorPaletteElement;
+  interface HTMLKpColorChipElement extends Components.KpColorChip, HTMLStencilElement {}
+  const HTMLKpColorChipElement: {
+    prototype: HTMLKpColorChipElement;
+    new (): HTMLKpColorChipElement;
   };
 
   interface HTMLKpColorRibbonElement extends Components.KpColorRibbon, HTMLStencilElement {}
@@ -44,16 +37,14 @@ declare global {
     new (): HTMLKpColorRibbonElement;
   };
   interface HTMLElementTagNameMap {
-    'kp-code': HTMLKpCodeElement;
-    'kp-color-palette': HTMLKpColorPaletteElement;
+    'kp-color-chip': HTMLKpColorChipElement;
     'kp-color-ribbon': HTMLKpColorRibbonElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface KpCode {}
-  interface KpColorPalette {
-    'colors'?: { hex: string; name: string; rgb: string; weight: string; }[];
+  interface KpColorChip {
+    'color'?: string;
   }
   interface KpColorRibbon {
     'colorHex'?: string;
@@ -64,8 +55,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
-    'kp-code': KpCode;
-    'kp-color-palette': KpColorPalette;
+    'kp-color-chip': KpColorChip;
     'kp-color-ribbon': KpColorRibbon;
   }
 }
@@ -76,8 +66,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'kp-code': LocalJSX.KpCode & JSXBase.HTMLAttributes<HTMLKpCodeElement>;
-      'kp-color-palette': LocalJSX.KpColorPalette & JSXBase.HTMLAttributes<HTMLKpColorPaletteElement>;
+      'kp-color-chip': LocalJSX.KpColorChip & JSXBase.HTMLAttributes<HTMLKpColorChipElement>;
       'kp-color-ribbon': LocalJSX.KpColorRibbon & JSXBase.HTMLAttributes<HTMLKpColorRibbonElement>;
     }
   }

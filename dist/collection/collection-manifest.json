@@ -1,21 +1,13 @@
 {
   "entries": [
-    "components/kp-code/kp-code.js",
-    "components/kp-color-palette/kp-color-palette.js",
-    "components/kp-color-ribbon/kp-color-ribbon.js"
+    "components/kp-color-ribbon/kp-color-ribbon.js",
+    "components/kp-color-chip/kp-color-chip.js"
   ],
   "compiler": {
     "name": "@stencil/core",
     "version": "1.7.2",
     "typescriptVersion": "3.6.3"
   },
-  "collections": [
-    {
-      "name": "@deckdeckgo/highlight-code",
-      "tags": [
-        "deckgo-highlight-code"
-      ]
-    }
-  ],
+  "collections": [],
   "bundles": []
 }
