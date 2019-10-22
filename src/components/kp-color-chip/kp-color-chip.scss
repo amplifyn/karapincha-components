@@ -1,10 +1,10 @@
 .kp-color-chip {
   --kp-color-chip-border-radius: #{rem(3)};
   --kp-color-chip-bg-color: #ffffff;
-  --kp-color-chip-padding: #{rem(16)};
+  --kp-color-chip-padding: #{rem(8)};
   --kp-color-chip-size: #{rem(24)};
   --kp-color-chip-preview-border-radius: #{rem(3)};
-  --kp-color-chip-value-padding: #{rem(16)};
+  --kp-color-chip-value-padding: #{rem(8)};
 
   display: flex;
   padding: var(--kp-color-chip-padding);

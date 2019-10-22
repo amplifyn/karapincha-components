@@ -1,0 +1,81 @@
+.placeholder-color-ribbon {
+  --placeholder-color-ribbon-columns: #{rem(34)} 1fr #{rem(150)};
+  --placeholder-color-ribbon-padding: #{rem(8)} #{rem(16)};
+  --placeholder-color-ribbon-bg-color: #ffffff;
+  --placeholder-color-ribbon-border-radius: #{rem(3)};
+  --placeholder-color-ribbon-label-font-size: #{rem(12)};
+  --placeholder-color-ribbon-label-bg-color: #f3f4f6;
+
+  display: flex;
+  padding: var(--placeholder-color-ribbon-padding);
+  align-items: center;
+  background-color: var(--placeholder-color-ribbon-bg-color);
+  border-radius: var(--placeholder-color-ribbon-border-radius);
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    min-height: rem(26);
+
+    &:before {
+      min-height: rem(18);
+      min-width: rem(52);
+      display: inline-flex;
+      padding: rem(5) rem(8);
+      margin-right: rem(12);
+      font-size: var(--placeholder-color-ribbon-label-font-size);
+      font-weight: var(--font-weight--bold);
+      text-transform: uppercase;
+      background-color: var(--placeholder-color-ribbon-label-bg-color);
+      border-radius: rem(3);
+    }
+
+    i {
+      min-height: rem(18);
+      display: inline-flex;
+      padding: rem(5) rem(8);
+      font-size: var(--placeholder-color-ribbon-label-font-size);
+      font-weight: var(--font-weight--bold);
+      text-transform: uppercase;
+      background-color: var(--placeholder-color-ribbon-label-bg-color);
+      border-radius: rem(3);
+    }
+  }
+
+  // Color chip
+  &__chip {
+    width: rem(32);
+    height: rem(32);
+    background-color: var(--placeholder-color-ribbon-label-bg-color);
+    border-radius: var(--border-radius, rem(3));
+  }
+
+  // Name
+  &__name {
+    &:before {
+      content: "";
+    }
+
+    padding-right: rem(16);
+    padding-left: rem(16);
+    text-transform: capitalize;
+
+    i {
+      min-width: rem(200);
+    }
+  }
+
+  // Hex value
+  &__hex-value {
+    &:before {
+      content: "";
+    }
+
+    padding-left: rem(16);
+    margin-left: auto;
+
+    i {
+      min-width: rem(80);
+    }
+  }
+}

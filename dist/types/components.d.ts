@@ -20,6 +20,7 @@ export namespace Components {
     'colorWeight': string;
     'isCard': boolean;
   }
+  interface PlaceholderColorRibbon {}
 }
 
 declare global {
@@ -36,9 +37,16 @@ declare global {
     prototype: HTMLKpColorRibbonElement;
     new (): HTMLKpColorRibbonElement;
   };
+
+  interface HTMLPlaceholderColorRibbonElement extends Components.PlaceholderColorRibbon, HTMLStencilElement {}
+  const HTMLPlaceholderColorRibbonElement: {
+    prototype: HTMLPlaceholderColorRibbonElement;
+    new (): HTMLPlaceholderColorRibbonElement;
+  };
   interface HTMLElementTagNameMap {
     'kp-color-chip': HTMLKpColorChipElement;
     'kp-color-ribbon': HTMLKpColorRibbonElement;
+    'placeholder-color-ribbon': HTMLPlaceholderColorRibbonElement;
   }
 }
 
@@ -53,10 +61,12 @@ declare namespace LocalJSX {
     'colorWeight'?: string;
     'isCard'?: boolean;
   }
+  interface PlaceholderColorRibbon {}
 
   interface IntrinsicElements {
     'kp-color-chip': KpColorChip;
     'kp-color-ribbon': KpColorRibbon;
+    'placeholder-color-ribbon': PlaceholderColorRibbon;
   }
 }
 
@@ -68,6 +78,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'kp-color-chip': LocalJSX.KpColorChip & JSXBase.HTMLAttributes<HTMLKpColorChipElement>;
       'kp-color-ribbon': LocalJSX.KpColorRibbon & JSXBase.HTMLAttributes<HTMLKpColorRibbonElement>;
+      'placeholder-color-ribbon': LocalJSX.PlaceholderColorRibbon & JSXBase.HTMLAttributes<HTMLPlaceholderColorRibbonElement>;
     }
   }
 }
