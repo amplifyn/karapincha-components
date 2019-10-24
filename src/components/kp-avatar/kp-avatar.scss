@@ -1,0 +1,56 @@
+kp-avatar {
+  --avatar-size: #{rem(24)};
+  --avatar-font-size: #{rem(9)};
+  --avatar-bg-color: #f2f3f4;
+  --avatar-default-color: #cacbd1;
+  --avatar-border-color: #f2f3f4;
+  --avatar-border-size: 1px;
+
+  /* Size medium variation */
+  &.is-medium {
+    --avatar-size: #{rem(28)};
+    --avatar-font-size: #{rem(10)};
+  }
+
+  /* Size medium variation */
+  &.is-large {
+    --avatar-size: #{rem(36)};
+    --avatar-font-size: #{rem(13)};
+  }
+
+  position: relative;
+  z-index: 0;
+  display: inline-flex;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--avatar-font-size);
+  line-height: 16px;
+  letter-spacing: -0.04px;
+  text-align: center;
+  background-color: var(--avatar-bg-color);
+  border: var(--avatar-border-size) solid var(--avatar-border-color);
+  border-radius: 50%;
+  cursor: pointer;
+
+  svg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: calc(var(--avatar-size) - 30%);
+    transform: translateX(-50%);
+
+    path {
+      fill: var(--avatar-default-color);
+    }
+  }
+
+  img {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    object-fit: cover;
+    object-position: center;
+  }
+}

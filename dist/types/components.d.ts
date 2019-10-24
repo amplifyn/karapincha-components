@@ -10,6 +10,16 @@ import { HTMLStencilElement, JSXBase } from './stencil.core';
 
 
 export namespace Components {
+  interface KpAvatar {
+    'alt': string;
+    'img': string;
+    'isDefault': boolean;
+    'isLarge': boolean;
+    'isMedium': boolean;
+    'isSmall': boolean;
+    'name': string;
+  }
+  interface KpAvatarGroup {}
   interface KpColorChip {
     'color': string;
   }
@@ -25,6 +35,18 @@ export namespace Components {
 
 declare global {
 
+
+  interface HTMLKpAvatarElement extends Components.KpAvatar, HTMLStencilElement {}
+  const HTMLKpAvatarElement: {
+    prototype: HTMLKpAvatarElement;
+    new (): HTMLKpAvatarElement;
+  };
+
+  interface HTMLKpAvatarGroupElement extends Components.KpAvatarGroup, HTMLStencilElement {}
+  const HTMLKpAvatarGroupElement: {
+    prototype: HTMLKpAvatarGroupElement;
+    new (): HTMLKpAvatarGroupElement;
+  };
 
   interface HTMLKpColorChipElement extends Components.KpColorChip, HTMLStencilElement {}
   const HTMLKpColorChipElement: {
@@ -44,6 +66,8 @@ declare global {
     new (): HTMLPlaceholderColorRibbonElement;
   };
   interface HTMLElementTagNameMap {
+    'kp-avatar': HTMLKpAvatarElement;
+    'kp-avatar-group': HTMLKpAvatarGroupElement;
     'kp-color-chip': HTMLKpColorChipElement;
     'kp-color-ribbon': HTMLKpColorRibbonElement;
     'placeholder-color-ribbon': HTMLPlaceholderColorRibbonElement;
@@ -51,6 +75,16 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface KpAvatar {
+    'alt'?: string;
+    'img'?: string;
+    'isDefault'?: boolean;
+    'isLarge'?: boolean;
+    'isMedium'?: boolean;
+    'isSmall'?: boolean;
+    'name'?: string;
+  }
+  interface KpAvatarGroup {}
   interface KpColorChip {
     'color'?: string;
   }
@@ -64,6 +98,8 @@ declare namespace LocalJSX {
   interface PlaceholderColorRibbon {}
 
   interface IntrinsicElements {
+    'kp-avatar': KpAvatar;
+    'kp-avatar-group': KpAvatarGroup;
     'kp-color-chip': KpColorChip;
     'kp-color-ribbon': KpColorRibbon;
     'placeholder-color-ribbon': PlaceholderColorRibbon;
@@ -76,6 +112,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'kp-avatar': LocalJSX.KpAvatar & JSXBase.HTMLAttributes<HTMLKpAvatarElement>;
+      'kp-avatar-group': LocalJSX.KpAvatarGroup & JSXBase.HTMLAttributes<HTMLKpAvatarGroupElement>;
       'kp-color-chip': LocalJSX.KpColorChip & JSXBase.HTMLAttributes<HTMLKpColorChipElement>;
       'kp-color-ribbon': LocalJSX.KpColorRibbon & JSXBase.HTMLAttributes<HTMLKpColorRibbonElement>;
       'placeholder-color-ribbon': LocalJSX.PlaceholderColorRibbon & JSXBase.HTMLAttributes<HTMLPlaceholderColorRibbonElement>;

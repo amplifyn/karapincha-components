@@ -1,0 +1,10 @@
+kp-avatar-group {
+  display: flex;
+  align-items: center;
+
+  kp-avatar {
+    &:not(:first-of-type) {
+      margin-left: -12px;
+    }
+  }
+}

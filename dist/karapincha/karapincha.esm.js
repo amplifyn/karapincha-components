@@ -1,6 +1,1 @@
-import { p as patchBrowser, g as globals, b as bootstrapLazy } from './core-8710fcfc.js';
-
-patchBrowser().then(options => {
-  globals();
-  return bootstrapLazy([["kp-color-chip",[[0,"kp-color-chip",{"color":[1]}]]],["kp-color-ribbon",[[0,"kp-color-ribbon",{"isCard":[4,"is-card"],"colorName":[1,"color-name"],"colorRgb":[1,"color-rgb"],"colorWeight":[1,"color-weight"],"colorHex":[1,"color-hex"]}]]],["placeholder-color-ribbon",[[0,"placeholder-color-ribbon"]]]], options);
-});
+import{p as o,b as r}from"./core-d6cb883f.js";o().then(o=>r([["kp-avatar_5",[[4,"kp-avatar",{isDefault:[4,"is-default"],isSmall:[4,"is-small"],isMedium:[4,"is-medium"],isLarge:[4,"is-large"],img:[1],alt:[1],name:[1]}],[4,"kp-avatar-group"],[0,"kp-color-chip",{color:[1]}],[0,"kp-color-ribbon",{isCard:[4,"is-card"],colorName:[1,"color-name"],colorRgb:[1,"color-rgb"],colorWeight:[1,"color-weight"],colorHex:[1,"color-hex"]}],[0,"placeholder-color-ribbon"]]]],o));

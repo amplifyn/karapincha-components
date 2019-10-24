@@ -1,8 +1,10 @@
 {
   "entries": [
+    "components/kp-avatar-group/kp-avatar-group.js",
     "components/kp-color-chip/kp-color-chip.js",
     "components/kp-color-ribbon/kp-color-ribbon.js",
-    "components/placeholder-color-ribbon/placeholder-color-ribbon.js"
+    "components/placeholder-color-ribbon/placeholder-color-ribbon.js",
+    "components/kp-avatar/kp-avatar.js"
   ],
   "compiler": {
     "name": "@stencil/core",
