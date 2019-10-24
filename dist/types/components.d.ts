@@ -30,6 +30,10 @@ export namespace Components {
     'colorWeight': string;
     'isCard': boolean;
   }
+  interface KpDataRibbon {
+    'dataAvatarUrl': string;
+    'dataHeading': string;
+  }
   interface PlaceholderColorRibbon {}
 }
 
@@ -60,6 +64,12 @@ declare global {
     new (): HTMLKpColorRibbonElement;
   };
 
+  interface HTMLKpDataRibbonElement extends Components.KpDataRibbon, HTMLStencilElement {}
+  const HTMLKpDataRibbonElement: {
+    prototype: HTMLKpDataRibbonElement;
+    new (): HTMLKpDataRibbonElement;
+  };
+
   interface HTMLPlaceholderColorRibbonElement extends Components.PlaceholderColorRibbon, HTMLStencilElement {}
   const HTMLPlaceholderColorRibbonElement: {
     prototype: HTMLPlaceholderColorRibbonElement;
@@ -70,6 +80,7 @@ declare global {
     'kp-avatar-group': HTMLKpAvatarGroupElement;
     'kp-color-chip': HTMLKpColorChipElement;
     'kp-color-ribbon': HTMLKpColorRibbonElement;
+    'kp-data-ribbon': HTMLKpDataRibbonElement;
     'placeholder-color-ribbon': HTMLPlaceholderColorRibbonElement;
   }
 }
@@ -95,6 +106,10 @@ declare namespace LocalJSX {
     'colorWeight'?: string;
     'isCard'?: boolean;
   }
+  interface KpDataRibbon {
+    'dataAvatarUrl'?: string;
+    'dataHeading'?: string;
+  }
   interface PlaceholderColorRibbon {}
 
   interface IntrinsicElements {
@@ -102,6 +117,7 @@ declare namespace LocalJSX {
     'kp-avatar-group': KpAvatarGroup;
     'kp-color-chip': KpColorChip;
     'kp-color-ribbon': KpColorRibbon;
+    'kp-data-ribbon': KpDataRibbon;
     'placeholder-color-ribbon': PlaceholderColorRibbon;
   }
 }
@@ -116,6 +132,7 @@ declare module "@stencil/core" {
       'kp-avatar-group': LocalJSX.KpAvatarGroup & JSXBase.HTMLAttributes<HTMLKpAvatarGroupElement>;
       'kp-color-chip': LocalJSX.KpColorChip & JSXBase.HTMLAttributes<HTMLKpColorChipElement>;
       'kp-color-ribbon': LocalJSX.KpColorRibbon & JSXBase.HTMLAttributes<HTMLKpColorRibbonElement>;
+      'kp-data-ribbon': LocalJSX.KpDataRibbon & JSXBase.HTMLAttributes<HTMLKpDataRibbonElement>;
       'placeholder-color-ribbon': LocalJSX.PlaceholderColorRibbon & JSXBase.HTMLAttributes<HTMLPlaceholderColorRibbonElement>;
     }
   }

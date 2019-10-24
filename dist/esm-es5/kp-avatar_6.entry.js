@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host } from './core-5567df5d.js';
+import { r as registerInstance, h, H as Host, g as getElement } from './core-3137b077.js';
 var KpAvatar = /** @class */ (function () {
     function KpAvatar(hostRef) {
         registerInstance(this, hostRef);
@@ -80,6 +80,82 @@ var KpColorRibbon = /** @class */ (function () {
     });
     return KpColorRibbon;
 }());
+var KpDataRibbon = /** @class */ (function () {
+    function KpDataRibbon(hostRef) {
+        var _this = this;
+        registerInstance(this, hostRef);
+        this.classNames = { 'kp-data-ribbon': true };
+        this.renderAvatar = function () {
+            if (_this.dataAvatarUrl !== '' && _this.dataAvatarUrl !== undefined && _this.dataAvatarUrl !== null) {
+                return [h("kp-avatar", { class: "kp-data-ribbon__avatar", img: _this.dataAvatarUrl, "is-medium": "true" })];
+            }
+            return false;
+        };
+        this.renderHeading = function () {
+            if (_this.dataHeading) {
+                return [
+                    h("p", { class: { 'kp-data-ribbon__meta-heading': true } }, _this.dataHeading)
+                ];
+            }
+            return false;
+        };
+        this.renderMetaData = function () {
+            if (_this.hasLabelsSlot) {
+                return [
+                    h("span", { class: { 'kp-data-ribbon__meta-labels': true } }, h("slot", { name: 'labels' }))
+                ];
+            }
+            return false;
+        };
+        this.renderMeta = function () {
+            if (_this.dataHeading || _this.hasLabelsSlot) {
+                return [
+                    h("div", { class: { 'kp-data-ribbon__meta': true } }, _this.renderHeading(), _this.renderMetaData())
+                ];
+            }
+            return false;
+        };
+        this.renderActionsSlot = function () {
+            if (_this.hasActionsSlot) {
+                return [h("div", { class: { 'kp-data-ribbon__actions': true } }, h("slot", { name: 'actions' }))];
+            }
+            return false;
+        };
+        this.renderAfterActionsSlot = function () {
+            if (_this.hasAfterActionsSlot) {
+                return [h("div", { class: { 'kp-data-ribbon__after-actions': true } }, h("slot", { name: 'after-actions' }))];
+            }
+            return false;
+        };
+        this.renderSlots = function () {
+            if (_this.hasActionsSlot || _this.hasAfterActionsSlot) {
+                return [
+                    h("div", { class: "kp-data-ribbon__slots" }, _this.renderActionsSlot(), _this.renderAfterActionsSlot())
+                ];
+            }
+            return false;
+        };
+    }
+    KpDataRibbon.prototype.componentWillLoad = function () {
+        this.hasLabelsSlot = !!this.hostElement.querySelector('[slot="labels"]');
+        this.hasActionsSlot = !!this.hostElement.querySelector('[slot="actions"]');
+        this.hasAfterActionsSlot = !!this.hostElement.querySelector('[slot="after-actions"]');
+    };
+    KpDataRibbon.prototype.render = function () {
+        return (h(Host, { class: this.classNames }, this.renderAvatar(), this.renderMeta(), this.renderSlots()));
+    };
+    Object.defineProperty(KpDataRibbon.prototype, "hostElement", {
+        get: function () { return getElement(this); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(KpDataRibbon, "style", {
+        get: function () { return ".kp-data-ribbon{--data-ribbon-border-radius:0.1875rem;--data-ribbon-bg-color:#fff;--data-ribbon-padding:0.5rem 1rem;--data-ribbon-actions-slot-padding:0;--data-ribbon-after-actions-slot-padding:0 0 0 0.75rem;display:-ms-flexbox;display:flex;padding:var(--data-ribbon-padding);-ms-flex-align:center;align-items:center;background-color:var(--data-ribbon-bg-color);border-radius:var(--data-ribbon-border-radius)}.kp-data-ribbon__avatar{margin-right:.5rem}.kp-data-ribbon__meta-labels label:not(:last-of-type):after{margin-right:.25rem;margin-left:.25rem;content:\"•\"}.kp-data-ribbon__slots{display:-ms-flexbox;display:flex;margin-left:auto;-ms-flex-align:center;align-items:center}.kp-data-ribbon__actions{padding:var(--data-ribbon-actions-slot-padding)}.kp-data-ribbon__after-actions{padding:var(--data-ribbon-after-actions-slot-padding)}"; },
+        enumerable: true,
+        configurable: true
+    });
+    return KpDataRibbon;
+}());
 var PlaceholderColorRibbon = /** @class */ (function () {
     function PlaceholderColorRibbon(hostRef) {
         registerInstance(this, hostRef);
@@ -94,4 +170,4 @@ var PlaceholderColorRibbon = /** @class */ (function () {
     });
     return PlaceholderColorRibbon;
 }());
-export { KpAvatar as kp_avatar, KpAvatarGroup as kp_avatar_group, KpColorChip as kp_color_chip, KpColorRibbon as kp_color_ribbon, PlaceholderColorRibbon as placeholder_color_ribbon };
+export { KpAvatar as kp_avatar, KpAvatarGroup as kp_avatar_group, KpColorChip as kp_color_chip, KpColorRibbon as kp_color_ribbon, KpDataRibbon as kp_data_ribbon, PlaceholderColorRibbon as placeholder_color_ribbon };

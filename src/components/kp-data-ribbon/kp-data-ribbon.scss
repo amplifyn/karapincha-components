@@ -1,0 +1,54 @@
+.kp-data-ribbon {
+  --data-ribbon-border-radius: #{rem(3)};
+  --data-ribbon-bg-color: #ffffff;
+  --data-ribbon-padding: #{rem(8)} #{rem(16)};
+  --data-ribbon-actions-slot-padding: 0;
+  --data-ribbon-after-actions-slot-padding: 0 0 0 #{rem(12)};
+
+  display: flex;
+  padding: var(--data-ribbon-padding);
+  align-items: center;
+  background-color: var(--data-ribbon-bg-color);
+  border-radius: var(--data-ribbon-border-radius);
+
+  /* Avatar */
+  &__avatar {
+    margin-right: rem(8);
+  }
+
+  /* Meta */
+  &__meta {
+  }
+
+  /* Meta heading */
+  &__meta-heading {
+  }
+
+  /* Meta labels */
+  &__meta-labels {
+    label:not(:last-of-type) {
+      &:after {
+        margin-right: rem(4);
+        margin-left: rem(4);
+        content: "•";
+      }
+    }
+  }
+
+  /* Slots */
+  &__slots {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+  }
+
+  /* Actions slot */
+  &__actions {
+    padding: var(--data-ribbon-actions-slot-padding);
+  }
+
+  /* After actions slot */
+  &__after-actions {
+    padding: var(--data-ribbon-after-actions-slot-padding);
+  }
+}
