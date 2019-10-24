@@ -1,6 +1,6 @@
 {
   "name": "karapincha-dev",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Karapincha web components library - DEV",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
