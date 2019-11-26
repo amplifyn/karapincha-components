@@ -1,0 +1,81 @@
+// Mixing for placeholder color
+@mixin placeholder-color($color) {
+  &::-webkit-input-placeholder { /* WebKit browsers */
+      color: $color;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: $color;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: $color;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+      color: $color;
+  }
+}
+
+// Input field variables
+.kp-input-field {
+
+  // Layout
+  --kp-input-padding: #{rem(8)} #{rem(12)};
+  --kp-input-border-top-left-radius: #{rem(8)};
+  --kp-input-border-top-right-radius: #{rem(8)};
+  --kp-input-border-bottom-left-radius: #{rem(8)};
+  --kp-input-border-bottom-right-radius: #{rem(8)};
+
+  // Colors
+  --kp-input-color: #16171A;
+  --kp-input-bg-color: #ffffff;
+  --kp-input-placeholder-color: #727274;
+
+  // Font
+  --kp-input-font-size: #{rem(16)};
+  --kp-input-line-height: #{rem(24)};
+  --kp-input-font-weight: 500;
+  --kp-input-font-style: normal;
+  --kp-input-letter-spacing: #{rem(0)};
+
+  // Border
+  --kp-input-border-style: solid;  
+  --kp-input-border-width: #{rem(1)}; 
+  --kp-input-border-color: #DCDDDF;  
+  --kp-input-focus-border-color: #00B8A7;
+  
+  // Input field - styles
+  width: 100%;
+  padding: var(--kp-input-padding);
+  font-size: var(--kp-input-font-size);
+  font-style: var(--kp-input-font-style);
+  line-height: var(--kp-input-line-height);
+  color: var(--kp-input-color);
+  background-color: var(--kp-input-bg-color);
+  border-width: var(--kp-input-border-width);
+  border-style: var(--kp-input-border-style);
+  border-color: var(--kp-input-border-color);
+  border-top-left-radius: var(--kp-input-border-top-left-radius);
+  border-top-right-radius: var(--kp-input-border-top-right-radius);
+  border-bottom-left-radius: var(--kp-input-border-bottom-left-radius);
+  border-bottom-right-radius: var(--kp-input-border-bottom-right-radius);
+  @include placeholder-color (var(--kp-input-placeholder-color));
+
+  // Input field - focus state
+  &:focus {
+    outline: none;
+    border: 1px solid var(--kp-input-focus-border-color);
+  }
+
+  // Input field - error state
+  &.isError {
+
+    --kp-input-border-color: #FC464A; 
+    border: 1px solid var(--kp-input-border-color);
+
+    // Error input field focus 
+    &:focus {
+      border: 1px solid var(--kp-input-focus-border-color);
+    }
+
+  }
+
+}

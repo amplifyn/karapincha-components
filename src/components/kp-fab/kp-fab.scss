@@ -1,0 +1,110 @@
+// Fab icon
+.kp-fab {
+
+  // Fab button
+  &__btn {
+    --kp-fab-position: relative;
+    --kp-fab-top: #{rem(8)};
+    --kp-fab-bottom: #{rem(8)};
+    --kp-fab-left: #{rem(8)};
+    --kp-fab-right: #{rem(8)};
+
+    --kp-fab-padding: #{rem(0)};
+    --kp-fab-width: #{rem(36)};
+    --kp-fab-height: #{rem(36)};
+    --kp-fab-border-width: #{rem(0)};
+    --kp-fab-border-radius: 50%;
+    --kp-fab-background-color: #000000;
+    --kp-fab-text-color: #ffffff;
+    --kp-fab-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.36);
+
+    display: inline-flex;
+    position: var(--kp-fab-position);
+    top: var(--kp-fab-top);
+    bottom: var(--kp-fab-bottom);
+    left: var(--kp-fab-left);
+    right: var(--kp-fab-right);
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: var(--kp-fab-width);
+    height: var(--kp-fab-height);
+    padding: var(--kp-fab-padding);
+    border: var(--kp-fab-border);
+    border-radius: var(--kp-fab-border-radius);
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    background-color: var(--kp-fab-background-color);
+    color: var(--kp-fab-text-color);
+    box-shadow: var(--kp-fab-box-shadow);
+
+    // Fab button hover state
+    &:hover {
+
+      // Icon
+      .kp-fab__icon {
+        --kp-fab-icon-background-color: #00B8A7;
+        --kp-fab-icon-color: #00B8A7;
+
+        background-color: var(--kp-fab-icon-background-color);
+        color: var(--kp-fab-icon-color);
+      }
+
+    }
+
+    // Disabled state
+    &--disabled {
+      --kp-fab-icon-disabled-background-color: #DCDDDF;
+
+      background-color: var(--kp-fab-icon-disabled-background-color);
+
+      // Fab button hover state
+      &:hover {
+
+        // Icon
+        .kp-fab__icon {
+          --kp-fab-icon-background-color: #ffffff;
+          --kp-fab-icon-color: #ffffff;
+
+          background-color: var(--kp-fab-icon-background-color);
+          color: var(--kp-fab-icon-color);
+        }
+
+      }
+
+    }
+
+    // Button loading state
+    &--loading {
+      cursor: auto;
+      pointer-events: none;
+    }
+
+  }
+
+  // Fab icon
+  &__icon {
+    --kp-fab-icon-width: #{rem(20)};
+    --kp-fab-icon-height: #{rem(20)};
+    --kp-fab-icon-background-color: #fff;
+    --kp-fab-icon-color: #fff;
+    --kp-fab-icon-border-radius: 50%;
+    --kp-fab-icon-font-size: #{rem(20)};
+    --kp-fab-icon-line-height: #{rem(20)};
+
+    display: block;
+    position: absolute;
+    width: var(--kp-fab-icon-width);
+    height: var(--kp-fab-icon-height);
+    border-radius: var(--kp-fab-icon-border-radius);
+    background-color: var(--kp-fab-icon-background-color);
+    color: var(--kp-fab-icon-color);
+  }
+
+  // Loading state
+  &--loading {
+    pointer-events: none;
+  }
+
+}

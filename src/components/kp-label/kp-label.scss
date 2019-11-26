@@ -1,0 +1,30 @@
+// Input label
+.kp-label {
+
+  // Label text
+  &__text {
+    --kp-input-label-color: #161616;
+    --kp-input-label-font-size: #{rem(13)};
+    --kp-input-label-font-weight: 500;
+    --kp-input-label-font-style: normal;
+    --kp-input-label-line-height: #{rem(16)};
+    --kp-input-label-letter-spacing: #{rem(0)};
+
+    display: flex;
+    margin-bottom: #{rem(10)};
+    font-size: var(--kp-input-label-font-size);
+    font-weight: var(--kp-input-label-font-weight);
+    font-style: var(--kp-input-label-font-style);
+    line-height: var(--kp-input-label-line-height);
+    letter-spacing: var(--kp-input-label-letter-spacing);
+    color: var(--kp-input-label-color);
+
+    // Label text error state
+    .isError & {
+      --kp-label-error-color: #FC464A; 
+      color: var(--kp-label-error-color);
+    }
+
+  }
+
+}

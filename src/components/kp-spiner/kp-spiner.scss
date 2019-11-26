@@ -1,0 +1,56 @@
+// Spinner
+.kp-spiner {
+  position: relative;
+  --kp-spiner-width: #{rem(20)};
+  --kp-spiner-height: #{rem(20)};
+
+  width: var(--kp-spiner-width);
+  height: var(--kp-spiner-height);
+
+  // Spin element 
+  &__element {
+    --kp-spiner-element-width: #{rem(20)};
+    --kp-spiner-element-height: #{rem(20)};
+    --kp-spiner-element-border-width: #{rem(2)};
+    --kp-spiner-element-border-color: #{rem(20)};
+    --kp-spiner-element-border-color: #fff;
+    --kp-spiner-element-separate-border-color: #fff transparent transparent transparent;
+
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: var(--kp-spiner-element-width);
+    height: var(--kp-spiner-element-height);
+    border: var(--kp-spiner-element-border-width) solid var(--kp-spiner-element-border-color);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--kp-spiner-element-separate-border-color);
+
+    // First element
+    &:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+
+    // Second element
+    &:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+
+    // Third element
+    &:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+
+  }
+
+}
+
+// Spin animation
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

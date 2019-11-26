@@ -1,0 +1,35 @@
+// Logo
+.kp-logo {
+  --kp-logo-width: #{rem(100)};
+  --kp-logo-height: auto;
+
+  // For SVG
+  svg {
+    width: var(--kp-logo-width);
+    height: var(--kp-logo-height);
+  }
+
+  // Logo small
+  &--small {
+    --kp-logo-small-width: #{rem(24)};
+    width: var(--kp-logo-small-width);
+
+    // SVG in small
+    svg {
+      width: var(--kp-logo-small-width);
+    }
+
+  }
+
+  // Logo large
+  &--large {
+    --kp-logo-large-width: #{rem(45)};
+    width: var(--kp-logo-large-width);
+
+    // SVG in large
+    svg {
+      width: var(--kp-logo-large-width);  
+    }
+  }
+
+}

@@ -19,7 +19,20 @@ export namespace Components {
     'isSmall': boolean;
     'name': string;
   }
-  interface KpAvatarGroup {}
+  interface KpButton {
+    'buttonId': string;
+    'buttonText': string;
+    'isDefault': boolean;
+    'isDisabled': boolean;
+    'isInvert': boolean;
+    'isLarge': boolean;
+    'isLoading': boolean;
+    'isLoadingIcon': boolean;
+    'isOutline': boolean;
+    'isOutlineInvert': boolean;
+    'isText': boolean;
+    'useIcon': boolean;
+  }
   interface KpColorChip {
     'color': string;
   }
@@ -34,6 +47,32 @@ export namespace Components {
     'dataAvatarUrl': string;
     'dataHeading': string;
   }
+  interface KpFab {
+    'dataIconName': string;
+    'isDisabled': boolean;
+    'isLoading': boolean;
+  }
+  interface KpInputField {
+    'fieldId': string;
+    'fieldName': string;
+    'fieldType': string;
+    'isError': boolean;
+    'placeholderText': string;
+  }
+  interface KpInputGroup {}
+  interface KpLabel {
+    'isError': boolean;
+    'labelFor': string;
+    'labelText': string;
+  }
+  interface KpLogo {
+    'imageAlt': string;
+    'imageSrc': string;
+    'isDefault': boolean;
+    'isLarge': boolean;
+    'isSmall': boolean;
+  }
+  interface KpSpiner {}
   interface PlaceholderColorRibbon {}
 }
 
@@ -46,10 +85,10 @@ declare global {
     new (): HTMLKpAvatarElement;
   };
 
-  interface HTMLKpAvatarGroupElement extends Components.KpAvatarGroup, HTMLStencilElement {}
-  const HTMLKpAvatarGroupElement: {
-    prototype: HTMLKpAvatarGroupElement;
-    new (): HTMLKpAvatarGroupElement;
+  interface HTMLKpButtonElement extends Components.KpButton, HTMLStencilElement {}
+  const HTMLKpButtonElement: {
+    prototype: HTMLKpButtonElement;
+    new (): HTMLKpButtonElement;
   };
 
   interface HTMLKpColorChipElement extends Components.KpColorChip, HTMLStencilElement {}
@@ -70,6 +109,42 @@ declare global {
     new (): HTMLKpDataRibbonElement;
   };
 
+  interface HTMLKpFabElement extends Components.KpFab, HTMLStencilElement {}
+  const HTMLKpFabElement: {
+    prototype: HTMLKpFabElement;
+    new (): HTMLKpFabElement;
+  };
+
+  interface HTMLKpInputFieldElement extends Components.KpInputField, HTMLStencilElement {}
+  const HTMLKpInputFieldElement: {
+    prototype: HTMLKpInputFieldElement;
+    new (): HTMLKpInputFieldElement;
+  };
+
+  interface HTMLKpInputGroupElement extends Components.KpInputGroup, HTMLStencilElement {}
+  const HTMLKpInputGroupElement: {
+    prototype: HTMLKpInputGroupElement;
+    new (): HTMLKpInputGroupElement;
+  };
+
+  interface HTMLKpLabelElement extends Components.KpLabel, HTMLStencilElement {}
+  const HTMLKpLabelElement: {
+    prototype: HTMLKpLabelElement;
+    new (): HTMLKpLabelElement;
+  };
+
+  interface HTMLKpLogoElement extends Components.KpLogo, HTMLStencilElement {}
+  const HTMLKpLogoElement: {
+    prototype: HTMLKpLogoElement;
+    new (): HTMLKpLogoElement;
+  };
+
+  interface HTMLKpSpinerElement extends Components.KpSpiner, HTMLStencilElement {}
+  const HTMLKpSpinerElement: {
+    prototype: HTMLKpSpinerElement;
+    new (): HTMLKpSpinerElement;
+  };
+
   interface HTMLPlaceholderColorRibbonElement extends Components.PlaceholderColorRibbon, HTMLStencilElement {}
   const HTMLPlaceholderColorRibbonElement: {
     prototype: HTMLPlaceholderColorRibbonElement;
@@ -77,10 +152,16 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'kp-avatar': HTMLKpAvatarElement;
-    'kp-avatar-group': HTMLKpAvatarGroupElement;
+    'kp-button': HTMLKpButtonElement;
     'kp-color-chip': HTMLKpColorChipElement;
     'kp-color-ribbon': HTMLKpColorRibbonElement;
     'kp-data-ribbon': HTMLKpDataRibbonElement;
+    'kp-fab': HTMLKpFabElement;
+    'kp-input-field': HTMLKpInputFieldElement;
+    'kp-input-group': HTMLKpInputGroupElement;
+    'kp-label': HTMLKpLabelElement;
+    'kp-logo': HTMLKpLogoElement;
+    'kp-spiner': HTMLKpSpinerElement;
     'placeholder-color-ribbon': HTMLPlaceholderColorRibbonElement;
   }
 }
@@ -95,7 +176,20 @@ declare namespace LocalJSX {
     'isSmall'?: boolean;
     'name'?: string;
   }
-  interface KpAvatarGroup {}
+  interface KpButton {
+    'buttonId'?: string;
+    'buttonText'?: string;
+    'isDefault'?: boolean;
+    'isDisabled'?: boolean;
+    'isInvert'?: boolean;
+    'isLarge'?: boolean;
+    'isLoading'?: boolean;
+    'isLoadingIcon'?: boolean;
+    'isOutline'?: boolean;
+    'isOutlineInvert'?: boolean;
+    'isText'?: boolean;
+    'useIcon'?: boolean;
+  }
   interface KpColorChip {
     'color'?: string;
   }
@@ -110,14 +204,46 @@ declare namespace LocalJSX {
     'dataAvatarUrl'?: string;
     'dataHeading'?: string;
   }
+  interface KpFab {
+    'dataIconName'?: string;
+    'isDisabled'?: boolean;
+    'isLoading'?: boolean;
+  }
+  interface KpInputField {
+    'fieldId'?: string;
+    'fieldName'?: string;
+    'fieldType'?: string;
+    'isError'?: boolean;
+    'placeholderText'?: string;
+  }
+  interface KpInputGroup {}
+  interface KpLabel {
+    'isError'?: boolean;
+    'labelFor'?: string;
+    'labelText'?: string;
+  }
+  interface KpLogo {
+    'imageAlt'?: string;
+    'imageSrc'?: string;
+    'isDefault'?: boolean;
+    'isLarge'?: boolean;
+    'isSmall'?: boolean;
+  }
+  interface KpSpiner {}
   interface PlaceholderColorRibbon {}
 
   interface IntrinsicElements {
     'kp-avatar': KpAvatar;
-    'kp-avatar-group': KpAvatarGroup;
+    'kp-button': KpButton;
     'kp-color-chip': KpColorChip;
     'kp-color-ribbon': KpColorRibbon;
     'kp-data-ribbon': KpDataRibbon;
+    'kp-fab': KpFab;
+    'kp-input-field': KpInputField;
+    'kp-input-group': KpInputGroup;
+    'kp-label': KpLabel;
+    'kp-logo': KpLogo;
+    'kp-spiner': KpSpiner;
     'placeholder-color-ribbon': PlaceholderColorRibbon;
   }
 }
@@ -129,10 +255,16 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'kp-avatar': LocalJSX.KpAvatar & JSXBase.HTMLAttributes<HTMLKpAvatarElement>;
-      'kp-avatar-group': LocalJSX.KpAvatarGroup & JSXBase.HTMLAttributes<HTMLKpAvatarGroupElement>;
+      'kp-button': LocalJSX.KpButton & JSXBase.HTMLAttributes<HTMLKpButtonElement>;
       'kp-color-chip': LocalJSX.KpColorChip & JSXBase.HTMLAttributes<HTMLKpColorChipElement>;
       'kp-color-ribbon': LocalJSX.KpColorRibbon & JSXBase.HTMLAttributes<HTMLKpColorRibbonElement>;
       'kp-data-ribbon': LocalJSX.KpDataRibbon & JSXBase.HTMLAttributes<HTMLKpDataRibbonElement>;
+      'kp-fab': LocalJSX.KpFab & JSXBase.HTMLAttributes<HTMLKpFabElement>;
+      'kp-input-field': LocalJSX.KpInputField & JSXBase.HTMLAttributes<HTMLKpInputFieldElement>;
+      'kp-input-group': LocalJSX.KpInputGroup & JSXBase.HTMLAttributes<HTMLKpInputGroupElement>;
+      'kp-label': LocalJSX.KpLabel & JSXBase.HTMLAttributes<HTMLKpLabelElement>;
+      'kp-logo': LocalJSX.KpLogo & JSXBase.HTMLAttributes<HTMLKpLogoElement>;
+      'kp-spiner': LocalJSX.KpSpiner & JSXBase.HTMLAttributes<HTMLKpSpinerElement>;
       'placeholder-color-ribbon': LocalJSX.PlaceholderColorRibbon & JSXBase.HTMLAttributes<HTMLPlaceholderColorRibbonElement>;
     }
   }

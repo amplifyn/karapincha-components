@@ -107,8 +107,78 @@
           <span>0.0 hrs</span>
         </div>
       </kp-data-ribbon>
+      <br /><br />
+      
+      <h2>Inputs</h2>
+      <br />
+      <kp-input-field field-type="text" placeholder-text="Test" field-name="name-first" field-id="id2"></kp-input-field>
+
+      <br /><br />
+      <kp-input-field field-type="text" placeholder-text="Test placeholder" field-name="name-second" field-id="id2" is-error=true></kp-input-field>
+
+      <br /><br />
+
+      <kp-input-group>
+        <kp-label label-for="test" label-text="This is label text"></kp-label>
+        <kp-input-field ield-type="text" placeholder-text="This is placeholder text"></kp-input-field>
+        <kp-label label-for="error"  is-error=true label-text="This is error label"></kp-label>
+      </kp-input-group>
+
+      <br /><br />
+
+      <h2>Buttons</h2>
+      <br />
+      <kp-button button-text="Button default"></kp-button>
+      <kp-button is-disabled=true button-text="Button default disabled"></kp-button>
+      <kp-button is-loading=true></kp-button>
+      <br /><br />
+      <kp-button is-large=true button-text="Button large"></kp-button>
+      <kp-button is-large=true is-disabled=true button-text="Button large disabled"></kp-button>
+      <kp-button is-large=true is-loading=true></kp-button>
+      <br /><br />
+      <kp-button is-outline=true button-text="Button outline"></kp-button>
+      <kp-button is-outline=true is-disabled=true button-text="Button outline disabled"></kp-button>
+      <kp-button is-outline=true is-loading=true></kp-button>
+      <br /><br />
+      <kp-button is-invert=true button-text="Button invert"></kp-button>
+      <kp-button is-invert=true is-disabled=true button-text="Button invert disabled"></kp-button>
+      <kp-button is-invert=true is-loading=true></kp-button>
+      <br /><br />
+      <kp-button is-text=true button-text="Text button"></kp-button>
+      <kp-button is-text=true is-disabled=true button-text="Text button disabled"></kp-button>
+      <kp-button is-text=true is-loading=true></kp-button>
+      <br /><br />
+      <kp-button is-outline-invert=true button-text="Button outline invert"></kp-button>
+      <kp-button is-outline-invert=true is-disabled=true button-text="Button outline invert disabled"></kp-button>
+      <kp-button is-outline-invert=true is-loading=true></kp-button>
+      <br /><br />
+      <kp-button use-icon=true></kp-button>
+      <kp-button use-icon=true is-disabled=true></kp-button>
+      <kp-button use-icon=true is-loading=true is-loading-icon=true></kp-button>
+      <br /><br />
+
+      <h2>Logos</h2>
+      <br />
+      <kp-logo image-alt="Logo" is-default=true></kp-logo>
+      <br />
+      <kp-logo image-alt="Logo" image-src="https://randomuser.me/api/portraits/men/32.jpg" is-small=true></kp-logo>
+      <br />
+      <kp-logo image-alt="Logo" image-src="https://randomuser.me/api/portraits/men/32.jpg" is-large=true></kp-logo>
+      <br /><br />
+
+      <br /><br />
+
+      <kp-fab data-icon-name="user"></kp-fab>
+      <kp-fab data-icon-name=" login " is-disabled=true></kp-fab>
+      <kp-fab data-icon-name="boo k"></kp-fab>
+      <kp-fab data-icon-name="boo k" is-loading=true></kp-fab>
+
+      <br /><br />
+
     </section>
   </div>
+
+
 </body>
 
 </html>

@@ -1,0 +1,297 @@
+// Button styles
+.kp-button {
+
+  // Layout
+  --kp-btn-min-width: #{rem(74)};
+  --kp-btn-padding: #{rem(8)} #{rem(16)};
+  --kp-btn-margin-left: #{rem(0)};
+  --kp-btn-margin-right: #{rem(0)};
+  --kp-btn-margin-top: #{rem(0)};
+  --kp-btn-margin-bottom: #{rem(0)};
+  --kp-btn-text-align: center;
+  --kp-btn-justify-content: center;
+
+  // Colors
+  --kp-btn-bg-color: #00B8A7;
+  --kp-btn-color: #FFFFFF;
+
+  // Fonts
+  --kp-btn-font-size: #{rem(15)};
+  --kp-btn-font-weight: 600;
+  --kp-btn-font-style: normal;
+  --kp-btn-line-height: #{rem(20)};
+  --kp-btn-letter-spacing: #{rem(-0.13)};
+
+  // Border
+  --kp-btn-border-radius: #{rem(24)};
+  --kp-btn-border-width: #{rem(1)};
+  --kp-btn-border-style: solid;
+  --kp-btn-border-color: #00B8A7;
+  
+  // Default button styles
+  display: inline-flex;
+  justify-content: var(--kp-btn-justify-content);
+  min-width: var(--kp-btn-min-width);
+  margin-left: var(--kp-btn-margin-left);
+  margin-right: var(--kp-btn-margin-right);
+  margin-top: var(--kp-btn-margin-top);
+  margin-bottom: var(--kp-btn-margin-bottom);
+  font-weight: var(--kp-btn-font-weight);
+  text-align: var(--kp-btn-text-align);
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  background-color: var(--kp-btn-bg-color);
+  color: var(--kp-btn-color);
+  border-width: var(--kp-btn-border-width);
+  border-style: var(--kp-btn-border-style);
+  border-color: var(--kp-btn-border-color);
+  padding: var(--kp-btn-padding);
+  font-size: var(--kp-btn-font-size);
+  line-height: var(--kp-btn-line-height);
+  letter-spacing: var(--kp-btn-letter-spacing);
+  border-radius: var(--kp-btn-border-radius);
+  user-select: none;
+
+  // Default focus state
+  &:focus {
+    outline: none;
+  }
+
+  // Default hover state
+  &:hover {
+    --kp-btn-hover-bg-color: rgb(0,184,167,0.9);
+    --kp-btn-hover-border-color: rgb(0,184,167,0.9);
+    --kp-btn-hover-color: #FFFFFF;
+
+    background-color: var(--kp-btn-hover-bg-color);
+    color: var(--kp-btn-hover-color);
+    border-color: var(--kp-btn-hover-border-color);
+  }
+
+  // Button disabled
+  &--disabled {
+    --kp-btn--disabled-bg-color: #DCDDDF;
+    --kp-btn-disabled-color: #FFFFFF;
+    --kp-btn-disabled-border-color: #DCDDDF;
+    --kp-btn-disabled-cursor: default;
+
+    background-color: var(--kp-btn--disabled-bg-color);
+    color: var(--kp-btn-disabled-color);
+    border-color: var(--kp-btn-disabled-border-color);
+    cursor: var(--kp-btn-disabled-cursor);
+
+    // Disabled hover
+    &:hover {
+      background-color: var(--kp-btn--disabled-bg-color);
+      color: var(--kp-btn-disabled-color);
+      border-color: var(--kp-btn-disabled-border-color);
+    }
+
+  }
+
+  // Button large
+  &--large {
+    --kp-btn-large-padding: #{rem(10)} #{rem(16)};
+    --kp-btn-large-font-size: #{rem(17)};
+    --kp-btn-large-line-height: #{rem(20)};
+
+    padding:var(--kp-btn-large-padding);
+    font-style: var(--kp-btn-large-font-size);
+    line-height: var(--kp-btn-large-line-height);
+
+  }
+
+  // Buton outline
+  &--outline {
+    --kp-btn-outline-bg-color: #F8F8F8;
+    --kp-btn-outline-color: #00B8A7;
+    --kp-btn-outline-border-color: #00B8A7;
+
+    background-color: var(--kp-btn-outline-bg-color);
+    color: var(--kp-btn-outline-color);
+    border-color: var(--kp-btn-outline-border-color);
+
+    // Outline button hover color
+    &:hover {
+      --kp-btn-outline-hover-bg-color: rgba(0, 184, 167, 0.05);
+      --kp-btn-outline-hover-color: #00B8A7;
+      --kp-btn-outline-hover-border-color: #00B8A7;
+
+      background-color: var(--kp-btn-outline-hover-bg-color);
+      color: var(--kp-btn-outline-hover-color);
+      border-color: var(--kp-btn-outline-hover-border-color);
+    }
+
+    // Outline disabled
+    &.kp-button--disabled {
+      --kp-btn-outline-disabled-bg-color: #F8F8F8;
+      --kp-btn-outline-disabled-color: #DCDDDF;
+      --kp-btn-outline-disabled-border-color: #DCDDDF;
+
+      background-color: var(--kp-btn-outline-disabled-bg-color);
+      color: var(--kp-btn-outline-disabled-color);
+      border-color: var(--kp-btn-outline-disabled-border-color);
+    }
+
+    // Loading
+    .kp-spiner__element {
+      border-color: var(--kp-btn-outline-color) transparent transparent transparent;
+    }
+
+  }
+
+  // Button invert
+  &--invert {
+    --kp-btn-invert-bg-color: #FFFFFF;
+    --kp-btn-invert-color: #00B8A7;
+    --kp-btn-invert-border-color: #FFFFFF;
+
+    background-color: var(--kp-btn-invert-bg-color);
+    color: var(--kp-btn-invert-color);
+    border-color: var(--kp-btn-invert-border-color);
+
+    // Button invert hover
+    &:hover {
+      --kp-btn-invert-hover-bg-color: rgba(255, 255, 255, 0.9);
+      --kp-btn-invert-hover-color: #00B8A7;
+      --kp-btn-invert-hover-border-color: #FFFFFF;
+
+      background-color: var(--kp-btn-invert-hover-bg-color);
+      color: var(--kp-btn-invert-hover-color);
+      border-color: var(--kp-btn-invert-hover-border-color);
+    }
+
+    // Invert disabled
+    &.kp-button--disabled {
+      --kp-btn-invert-disabled-bg-color: #DCDDDF;
+      --kp-btn-invert-disabled-color: #FFFFFF;
+      --kp-btn-invert-disabled-border-color: #DCDDDF;
+
+      background-color: var(--kp-btn-invert-disabled-bg-color);
+      color: var(--kp-btn-invert-disabled-color);
+      border-color: var(--kp-btn-invert-disabled-border-color);
+    }
+
+    // Invert loading
+    .kp-spiner__element {
+      border-color: var(--kp-btn-invert-color) transparent transparent transparent;
+    }
+
+  }
+
+  // Text button
+  &--text {
+    --kp-btn-text-bg-color: transparent;
+    --kp-btn-text-color: #00B8A7;
+    --kp-btn-text-border-color: transparent;
+
+    background-color: var(--kp-btn-text-bg-color);
+    color: var(--kp-btn-text-color);
+    border-color: var(--kp-btn-text-border-color);
+
+    // Text button hover
+    &:hover {
+      background-color: var(--kp-btn-text-bg-color);
+      color: var(--kp-btn-text-color);
+      border-color: var(--kp-btn-text-border-color);
+    }
+
+    // Text button disabled
+    &.kp-button--disabled {
+      --kp-btn-text-disabled-color: #DCDDDF;
+
+      background-color: var(--kp-btn-text-bg-color);
+      color: var(--kp-btn-text-disabled-color);
+      border-color: var(--kp-btn-text-border-color);
+    }
+
+    // Text button loading element
+    .kp-spiner__element {
+      border-color: var(--kp-btn-text-color) transparent transparent transparent;
+    }
+
+  }
+
+  // Button outline invert
+  &--outline-invert {
+    --kp-btn-outline-invert-bg-color: transparent;
+    --kp-btn-outline-invert-color: #FFFFFF;
+    --kp-btn-outline-invert-border-color: #FFFFFF;
+
+    background-color: var(--kp-btn-outline-invert-bg-color);
+    color: var(--kp-btn-outline-invert-color);
+    border-color: var(--kp-btn-outline-invert-border-color);
+
+    // Button outline invert hover
+    &:hover {
+      --kp-btn-outline-invert-hover-bg-color: #FFFFFF;
+      --kp-btn-outline-invert-hover-color: #00B8A7;
+      --kp-btn-outline-invert-hover-border-color: #FFFFFF;
+
+      background-color: var(--kp-btn-outline-invert-hover-bg-color);
+      color: var(--kp-btn-outline-invert-hover-color);
+      border-color: var(--kp-btn-outline-invert-hover-border-color);
+    }
+
+    // Invert disabled
+    &.kp-button--disabled {
+      --kp-btn-outline-invert-disabled-bg-color: #F8F8F8;
+      --kp-btn-outline-invert-disabled-color: #DCDDDF;
+      --kp-btn-outline-invert-disabled-border-color: #DCDDDF;
+
+      background-color: var(--kp-btn-outline-invert-disabled-bg-color);
+      color: var(--kp-btn-outline-invert-disabled-color);
+      border-color: var(--kp-btn-outline-invert-disabled-border-color);
+    }
+
+    // Loading state
+    .kp-spiner__element {
+      border-color: var(--kp-btn-outline-invert-color) transparent transparent transparent;
+    }
+
+  }
+
+  // Button loading state
+  &--loading {
+    cursor: auto;
+    pointer-events: none;
+  }
+
+  // Button use icon
+  &--use-icon {
+    --kp-btn-use-icon-min-width: #{rem(48)};
+    min-width: var(--kp-btn-use-icon-min-width);
+  }
+
+  // Use icon loading
+  &--use-icon-loading {
+    --kp-btn-icon-loading-bg-color: transparent;
+    --kp-btn-icon-loading-color: #00B8A7;
+    --kp-btn-icon-loading-border-color: #00B8A7;
+
+    background-color: var(--kp-btn-icon-loading-bg-color);
+    border-color: var(--kp-btn-icon-loading-border-color);
+
+    // Use icon loading element
+    .kp-spiner__element {
+      border-color: var(--kp-btn-icon-loading-color) transparent transparent transparent; 
+    }
+  }
+
+  // Icon styles for insie the button
+  &__icon {
+    --kp-btn-icon-width: #{rem(20)};
+    --kp-btn-icon-height: #{rem(20)};
+    --kp-btn-icon-bg-color: #eee;
+    --kp-btn-icon-color: #eee;
+    
+    width: var(--kp-btn-icon-width);
+    height: var(--kp-btn-icon-height);
+    background-color: var(--kp-btn-icon-bg-color);
+    color: var(--kp-btn-icon-color);
+  }
+
+}
