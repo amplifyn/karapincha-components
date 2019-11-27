@@ -4,42 +4,25 @@ export class KpButton {
         // Button state props
         this.isDefault = false;
         this.isLarge = false;
-        this.isOutline = false;
         this.isDisabled = false;
-        this.isInvert = false;
-        this.isText = false;
-        this.isOutlineInvert = false;
         this.isLoading = false;
-        this.useIcon = false;
-        this.isLoadingIcon = false;
         // Class names
         this.classNames = {
             'kp-button': true,
             'kp-button--large': this.isLarge,
-            'kp-button--outline': this.isOutline,
             'kp-button--disabled': this.isDisabled,
-            'kp-button--invert': this.isInvert,
-            'kp-button--text': this.isText,
-            'kp-button--outline-invert': this.isOutlineInvert,
-            'kp-button--loading': this.isLoading,
-            'kp-button--use-icon': this.useIcon,
-            'kp-button--use-icon-loading': this.isLoadingIcon
+            'kp-button--loading': this.isLoading
         };
     }
     render() {
         if (this.isLoading) {
             return (h(Host, null,
-                h("button", { class: this.classNames, id: this.buttonId },
+                h("button", { class: this.classNames, id: this.btnId },
                     h("kp-spiner", null))));
-        }
-        else if (this.useIcon) {
-            return (h(Host, null,
-                h("button", { class: this.classNames, id: this.buttonId },
-                    h("span", { class: { 'kp-button__icon': true } }))));
         }
         else {
             return (h(Host, null,
-                h("button", { class: this.classNames, id: this.buttonId }, this.buttonText)));
+                h("button", { class: this.classNames, id: this.btnId }, this.text)));
         }
     }
     static get is() { return "kp-button"; }
@@ -50,7 +33,7 @@ export class KpButton {
         "$": ["kp-button.css"]
     }; }
     static get properties() { return {
-        "buttonText": {
+        "text": {
             "type": "string",
             "mutable": false,
             "complexType": {
@@ -64,10 +47,10 @@ export class KpButton {
                 "tags": [],
                 "text": ""
             },
-            "attribute": "button-text",
+            "attribute": "text",
             "reflect": false
         },
-        "buttonId": {
+        "btnId": {
             "type": "string",
             "mutable": false,
             "complexType": {
@@ -81,7 +64,7 @@ export class KpButton {
                 "tags": [],
                 "text": ""
             },
-            "attribute": "button-id",
+            "attribute": "btn-id",
             "reflect": false
         },
         "isDefault": {
@@ -120,24 +103,6 @@ export class KpButton {
             "reflect": false,
             "defaultValue": "false"
         },
-        "isOutline": {
-            "type": "boolean",
-            "mutable": false,
-            "complexType": {
-                "original": "boolean",
-                "resolved": "boolean",
-                "references": {}
-            },
-            "required": false,
-            "optional": false,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "attribute": "is-outline",
-            "reflect": false,
-            "defaultValue": "false"
-        },
         "isDisabled": {
             "type": "boolean",
             "mutable": false,
@@ -153,60 +118,6 @@ export class KpButton {
                 "text": ""
             },
             "attribute": "is-disabled",
-            "reflect": false,
-            "defaultValue": "false"
-        },
-        "isInvert": {
-            "type": "boolean",
-            "mutable": false,
-            "complexType": {
-                "original": "boolean",
-                "resolved": "boolean",
-                "references": {}
-            },
-            "required": false,
-            "optional": false,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "attribute": "is-invert",
-            "reflect": false,
-            "defaultValue": "false"
-        },
-        "isText": {
-            "type": "boolean",
-            "mutable": false,
-            "complexType": {
-                "original": "boolean",
-                "resolved": "boolean",
-                "references": {}
-            },
-            "required": false,
-            "optional": false,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "attribute": "is-text",
-            "reflect": false,
-            "defaultValue": "false"
-        },
-        "isOutlineInvert": {
-            "type": "boolean",
-            "mutable": false,
-            "complexType": {
-                "original": "boolean",
-                "resolved": "boolean",
-                "references": {}
-            },
-            "required": false,
-            "optional": false,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "attribute": "is-outline-invert",
             "reflect": false,
             "defaultValue": "false"
         },
@@ -227,43 +138,6 @@ export class KpButton {
             "attribute": "is-loading",
             "reflect": false,
             "defaultValue": "false"
-        },
-        "useIcon": {
-            "type": "boolean",
-            "mutable": false,
-            "complexType": {
-                "original": "boolean",
-                "resolved": "boolean",
-                "references": {}
-            },
-            "required": false,
-            "optional": false,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "attribute": "use-icon",
-            "reflect": false,
-            "defaultValue": "false"
-        },
-        "isLoadingIcon": {
-            "type": "boolean",
-            "mutable": false,
-            "complexType": {
-                "original": "boolean",
-                "resolved": "boolean",
-                "references": {}
-            },
-            "required": false,
-            "optional": false,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "attribute": "is-loading-icon",
-            "reflect": false,
-            "defaultValue": "false"
         }
     }; }
-    static get elementRef() { return "hostElement"; }
 }

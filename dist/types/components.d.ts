@@ -21,18 +21,12 @@ export namespace Components {
   }
   interface KpAvatarGroup {}
   interface KpButton {
-    'buttonId': string;
-    'buttonText': string;
+    'btnId': string;
     'isDefault': boolean;
     'isDisabled': boolean;
-    'isInvert': boolean;
     'isLarge': boolean;
     'isLoading': boolean;
-    'isLoadingIcon': boolean;
-    'isOutline': boolean;
-    'isOutlineInvert': boolean;
-    'isText': boolean;
-    'useIcon': boolean;
+    'text': string;
   }
   interface KpColorChip {
     'color': string;
@@ -186,18 +180,12 @@ declare namespace LocalJSX {
   }
   interface KpAvatarGroup {}
   interface KpButton {
-    'buttonId'?: string;
-    'buttonText'?: string;
+    'btnId'?: string;
     'isDefault'?: boolean;
     'isDisabled'?: boolean;
-    'isInvert'?: boolean;
     'isLarge'?: boolean;
     'isLoading'?: boolean;
-    'isLoadingIcon'?: boolean;
-    'isOutline'?: boolean;
-    'isOutlineInvert'?: boolean;
-    'isText'?: boolean;
-    'useIcon'?: boolean;
+    'text'?: string;
   }
   interface KpColorChip {
     'color'?: string;
