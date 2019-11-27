@@ -16,13 +16,6 @@
 | `isSmall`   | `is-small`   |             | `boolean` | `false`              |
 
 
-## Events
-
-| Event           | Description | Type               |
-| --------------- | ----------- | ------------------ |
-| `todoCompleted` |             | `CustomEvent<any>` |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

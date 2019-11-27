@@ -19,6 +19,7 @@ export namespace Components {
     'isSmall': boolean;
     'name': string;
   }
+  interface KpAvatarGroup {}
   interface KpButton {
     'buttonId': string;
     'buttonText': string;
@@ -83,6 +84,12 @@ declare global {
   const HTMLKpAvatarElement: {
     prototype: HTMLKpAvatarElement;
     new (): HTMLKpAvatarElement;
+  };
+
+  interface HTMLKpAvatarGroupElement extends Components.KpAvatarGroup, HTMLStencilElement {}
+  const HTMLKpAvatarGroupElement: {
+    prototype: HTMLKpAvatarGroupElement;
+    new (): HTMLKpAvatarGroupElement;
   };
 
   interface HTMLKpButtonElement extends Components.KpButton, HTMLStencilElement {}
@@ -152,6 +159,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'kp-avatar': HTMLKpAvatarElement;
+    'kp-avatar-group': HTMLKpAvatarGroupElement;
     'kp-button': HTMLKpButtonElement;
     'kp-color-chip': HTMLKpColorChipElement;
     'kp-color-ribbon': HTMLKpColorRibbonElement;
@@ -176,6 +184,7 @@ declare namespace LocalJSX {
     'isSmall'?: boolean;
     'name'?: string;
   }
+  interface KpAvatarGroup {}
   interface KpButton {
     'buttonId'?: string;
     'buttonText'?: string;
@@ -234,6 +243,7 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'kp-avatar': KpAvatar;
+    'kp-avatar-group': KpAvatarGroup;
     'kp-button': KpButton;
     'kp-color-chip': KpColorChip;
     'kp-color-ribbon': KpColorRibbon;
@@ -255,6 +265,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'kp-avatar': LocalJSX.KpAvatar & JSXBase.HTMLAttributes<HTMLKpAvatarElement>;
+      'kp-avatar-group': LocalJSX.KpAvatarGroup & JSXBase.HTMLAttributes<HTMLKpAvatarGroupElement>;
       'kp-button': LocalJSX.KpButton & JSXBase.HTMLAttributes<HTMLKpButtonElement>;
       'kp-color-chip': LocalJSX.KpColorChip & JSXBase.HTMLAttributes<HTMLKpColorChipElement>;
       'kp-color-ribbon': LocalJSX.KpColorRibbon & JSXBase.HTMLAttributes<HTMLKpColorRibbonElement>;
