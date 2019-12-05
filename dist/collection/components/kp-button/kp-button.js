@@ -27,20 +27,32 @@ export class KpButton {
         };
     }
     render() {
-        if (this.isLoading) {
-            return (h(Host, null,
-                h("button", { class: this.classNames, id: this.buttonId },
-                    h("kp-spiner", null))));
-        }
-        else if (this.useIcon) {
-            return (h(Host, null,
-                h("button", { class: this.classNames, id: this.buttonId },
-                    h("span", { class: { 'kp-button__icon': true } }))));
-        }
-        else {
-            return (h(Host, null,
-                h("button", { class: this.classNames, id: this.buttonId }, this.buttonText)));
-        }
+        return (h(Host, null,
+            h("button", { class: this.classNames, id: this.buttonId },
+                h("slot", null))));
+        // if (this.isLoading) {
+        //   return (
+        //     <Host>
+        //       <button class={this.classNames} id={this.buttonId}>
+        //         <kp-spiner></kp-spiner>
+        //       </button>
+        //     </Host>
+        //   );
+        // } else if (this.useIcon) {
+        //   return (
+        //     <Host>
+        //       <button class={this.classNames} id={this.buttonId}>
+        //         <span class={{ 'kp-button__icon': true }}></span>
+        //       </button>
+        //     </Host>
+        //   );
+        // } else {
+        //   return (
+        //     <Host>
+        //       <button class={this.classNames} id={this.buttonId}>{this.buttonText}</button>
+        //     </Host>
+        //   );
+        // }
     }
     static get is() { return "kp-button"; }
     static get originalStyleUrls() { return {

@@ -40,29 +40,37 @@ export class KpButton {
   }
 
   render() {
-    if(this.isLoading) {
-      return (
-        <Host>
-          <button class={this.classNames} id={this.buttonId}>
-            <kp-spiner></kp-spiner>
-          </button>
-        </Host>
-      );
-    } else if (this.useIcon) {
-      return (
-        <Host>
-          <button class={this.classNames} id={this.buttonId}>
-            <span class={{ 'kp-button__icon':true }}></span>
-          </button>
-        </Host>
-      );    
-    } else {
-      return (
-        <Host>
-          <button class={this.classNames} id={this.buttonId}>{this.buttonText}</button>
-        </Host>
-      );
-    }
+    return (
+      <Host>
+        <button class={this.classNames} id={this.buttonId}>
+          <slot />
+        </button>
+      </Host>
+    );
+
+    // if (this.isLoading) {
+    //   return (
+    //     <Host>
+    //       <button class={this.classNames} id={this.buttonId}>
+    //         <kp-spiner></kp-spiner>
+    //       </button>
+    //     </Host>
+    //   );
+    // } else if (this.useIcon) {
+    //   return (
+    //     <Host>
+    //       <button class={this.classNames} id={this.buttonId}>
+    //         <span class={{ 'kp-button__icon': true }}></span>
+    //       </button>
+    //     </Host>
+    //   );
+    // } else {
+    //   return (
+    //     <Host>
+    //       <button class={this.classNames} id={this.buttonId}>{this.buttonText}</button>
+    //     </Host>
+    //   );
+    // }
   }
 
 }
