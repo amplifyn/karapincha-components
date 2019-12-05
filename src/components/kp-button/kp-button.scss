@@ -22,10 +22,12 @@ kp-button {
   --btn-border-style: solid;
   --btn-border-radius: 24px;
 
-  display: inline-flex;
+  display: flex;
   padding-right: var(--btn-padding-right);
   padding-left: var(--btn-padding-left);
   height: var(--btn-height);
+  align-items: center;
+  justify-content: center;
   color: var(--btn-default-text-color);
   font-size: 16px;
   font-weight: 600;
