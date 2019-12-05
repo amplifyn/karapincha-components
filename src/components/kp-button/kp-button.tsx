@@ -1,48 +1,45 @@
-import { Component, Host, h, Element, Prop } from '@stencil/core';
-import { HTMLStencilElement } from '@stencil/core/dist/declarations/component-interfaces';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'kp-button',
   styleUrl: 'kp-button.scss'
 })
 export class KpButton {
-
-  @Element() hostElement: HTMLStencilElement;
-
-  // Default props
-  @Prop() buttonText: string;
-  @Prop() buttonId: string;
-
-  // Button state props
+  @Prop() isBlock: boolean = false;
   @Prop() isDefault: boolean = false;
-  @Prop() isLarge: boolean = false;
-  @Prop() isOutline: boolean = false;
-  @Prop() isDisabled: boolean = false;
-  @Prop() isInvert: boolean = false;
-  @Prop() isText: boolean = false;
-  @Prop() isOutlineInvert: boolean = false;
-  @Prop() isLoading: boolean = false;
-  @Prop() useIcon: boolean = false;
-  @Prop() isLoadingIcon: boolean = false;
+  @Prop() isType: string = 'button';
+  // @Prop() isLarge: boolean = false;
+  // @Prop() isOutline: boolean = false;
+  // @Prop() isDisabled: boolean = false;
+  // @Prop() isInvert: boolean = false;
+  // @Prop() isText: boolean = false;
+  // @Prop() isOutlineInvert: boolean = false;
+  // @Prop() isLoading: boolean = false;
+  // @Prop() useIcon: boolean = false;
+  // @Prop() isLoadingIcon: boolean = false;
 
   // Class names
   private classNames = {
     'kp-button': true,
-    'kp-button--large': this.isLarge,
-    'kp-button--outline': this.isOutline,
-    'kp-button--disabled': this.isDisabled,
-    'kp-button--invert': this.isInvert,
-    'kp-button--text': this.isText,
-    'kp-button--outline-invert': this.isOutlineInvert,
-    'kp-button--loading': this.isLoading,
-    'kp-button--use-icon': this.useIcon,
-    'kp-button--use-icon-loading': this.isLoadingIcon
+    // 'kp-button--block': this.isBlock,
+    // 'kp-button--outline': this.isOutline,
+    // 'kp-button--disabled': this.isDisabled,
+    // 'kp-button--invert': this.isInvert,
+    // 'kp-button--text': this.isText,
+    // 'kp-button--outline-invert': this.isOutlineInvert,
+    // 'kp-button--loading': this.isLoading,
+    // 'kp-button--use-icon': this.useIcon,
+    // 'kp-button--use-icon-loading': this.isLoadingIcon
+  }
+
+  private hostClassNames = {
+    'kp-button--block': this.isBlock,
   }
 
   render() {
     return (
-      <Host>
-        <button class={this.classNames} id={this.buttonId}>
+      <Host class={this.hostClassNames}>
+        <button class={this.classNames} type={this.isType}>
           <slot />
         </button>
       </Host>

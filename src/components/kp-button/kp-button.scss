@@ -8,6 +8,15 @@
 kp-button {
   display: inline-flex;
   outline: none;
+
+  /* Block element */
+  &.kp-button--block {
+    display: flex;
+
+    .kp-button {
+      width: 100%;
+    }
+  }
 }
 
 /* Class styles */
@@ -17,7 +26,9 @@ kp-button {
   --btn-padding-left: 16px;
   --btn-default-text-color: #ffffff;
   --btn-default-bg-color: #00b8a7;
+  --btn-default-active-bg-color: #{darken(#00b8a7, 1%)};
   --btn-border-color: #00b8a7;
+  --btn-default-active-border-color: #00b8a7;
   --btn-border-width: 1px;
   --btn-border-style: solid;
   --btn-border-radius: 24px;
@@ -39,4 +50,19 @@ kp-button {
   border-radius: var(--btn-border-radius);
   outline: none;
   cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+
+  /* Active (Click) state */
+  &:active {
+    background-color: var(--btn-default-active-bg-color);
+    box-shadow: 0 0 0 2px rgba(0, 184, 167, 0.25);
+    border-color: var(--btn-default-active-border-color);
+  }
+
+  /* Focus and Hover state */
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(0, 184, 167, 0.25);
+    border-color: var(--btn-default-active-border-color);
+  }
 }

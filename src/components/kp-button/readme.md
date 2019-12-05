@@ -7,20 +7,11 @@
 
 ## Properties
 
-| Property          | Attribute           | Description | Type      | Default     |
-| ----------------- | ------------------- | ----------- | --------- | ----------- |
-| `buttonId`        | `button-id`         |             | `string`  | `undefined` |
-| `buttonText`      | `button-text`       |             | `string`  | `undefined` |
-| `isDefault`       | `is-default`        |             | `boolean` | `false`     |
-| `isDisabled`      | `is-disabled`       |             | `boolean` | `false`     |
-| `isInvert`        | `is-invert`         |             | `boolean` | `false`     |
-| `isLarge`         | `is-large`          |             | `boolean` | `false`     |
-| `isLoading`       | `is-loading`        |             | `boolean` | `false`     |
-| `isLoadingIcon`   | `is-loading-icon`   |             | `boolean` | `false`     |
-| `isOutline`       | `is-outline`        |             | `boolean` | `false`     |
-| `isOutlineInvert` | `is-outline-invert` |             | `boolean` | `false`     |
-| `isText`          | `is-text`           |             | `boolean` | `false`     |
-| `useIcon`         | `use-icon`          |             | `boolean` | `false`     |
+| Property    | Attribute    | Description | Type      | Default    |
+| ----------- | ------------ | ----------- | --------- | ---------- |
+| `isBlock`   | `is-block`   |             | `boolean` | `false`    |
+| `isDefault` | `is-default` |             | `boolean` | `false`    |
+| `isType`    | `is-type`    |             | `string`  | `'button'` |
 
 
 ----------------------------------------------

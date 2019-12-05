@@ -1,18 +1,8 @@
-import { HTMLStencilElement } from '@stencil/core/dist/declarations/component-interfaces';
 export declare class KpButton {
-    hostElement: HTMLStencilElement;
-    buttonText: string;
-    buttonId: string;
+    isBlock: boolean;
     isDefault: boolean;
-    isLarge: boolean;
-    isOutline: boolean;
-    isDisabled: boolean;
-    isInvert: boolean;
-    isText: boolean;
-    isOutlineInvert: boolean;
-    isLoading: boolean;
-    useIcon: boolean;
-    isLoadingIcon: boolean;
+    isType: string;
     private classNames;
+    private hostClassNames;
     render(): any;
 }

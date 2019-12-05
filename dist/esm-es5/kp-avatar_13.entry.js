@@ -50,33 +50,28 @@ var KpAvatarGroup = /** @class */ (function () {
 var KpButton = /** @class */ (function () {
     function KpButton(hostRef) {
         registerInstance(this, hostRef);
-        // Button state props
+        this.isBlock = false;
         this.isDefault = false;
-        this.isLarge = false;
-        this.isOutline = false;
-        this.isDisabled = false;
-        this.isInvert = false;
-        this.isText = false;
-        this.isOutlineInvert = false;
-        this.isLoading = false;
-        this.useIcon = false;
-        this.isLoadingIcon = false;
+        this.isType = 'button';
+        // @Prop() isLarge: boolean = false;
+        // @Prop() isOutline: boolean = false;
+        // @Prop() isDisabled: boolean = false;
+        // @Prop() isInvert: boolean = false;
+        // @Prop() isText: boolean = false;
+        // @Prop() isOutlineInvert: boolean = false;
+        // @Prop() isLoading: boolean = false;
+        // @Prop() useIcon: boolean = false;
+        // @Prop() isLoadingIcon: boolean = false;
         // Class names
         this.classNames = {
             'kp-button': true,
-            'kp-button--large': this.isLarge,
-            'kp-button--outline': this.isOutline,
-            'kp-button--disabled': this.isDisabled,
-            'kp-button--invert': this.isInvert,
-            'kp-button--text': this.isText,
-            'kp-button--outline-invert': this.isOutlineInvert,
-            'kp-button--loading': this.isLoading,
-            'kp-button--use-icon': this.useIcon,
-            'kp-button--use-icon-loading': this.isLoadingIcon
+        };
+        this.hostClassNames = {
+            'kp-button--block': this.isBlock,
         };
     }
     KpButton.prototype.render = function () {
-        return (h(Host, null, h("button", { class: this.classNames, id: this.buttonId }, h("slot", null))));
+        return (h(Host, { class: this.hostClassNames }, h("button", { class: this.classNames, type: this.isType }, h("slot", null))));
         // if (this.isLoading) {
         //   return (
         //     <Host>
@@ -101,13 +96,8 @@ var KpButton = /** @class */ (function () {
         //   );
         // }
     };
-    Object.defineProperty(KpButton.prototype, "hostElement", {
-        get: function () { return getElement(this); },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(KpButton, "style", {
-        get: function () { return "*,:after,:before{-webkit-box-sizing:border-box;box-sizing:border-box}kp-button{display:-ms-inline-flexbox;display:inline-flex;outline:none}.kp-button{--btn-height:40px;--btn-padding-right:16px;--btn-padding-left:16px;--btn-default-text-color:#fff;--btn-default-bg-color:#00b8a7;--btn-border-color:#00b8a7;--btn-border-width:1px;--btn-border-style:solid;--btn-border-radius:24px;display:-ms-flexbox;display:flex;padding-right:var(--btn-padding-right);padding-left:var(--btn-padding-left);height:var(--btn-height);-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;color:var(--btn-default-text-color);font-size:16px;font-weight:600;letter-spacing:-.22px;background-color:var(--btn-default-bg-color);border-color:var(--btn-border-color);border-style:var(--btn-border-style);border-width:var(--btn-border-width);border-radius:var(--btn-border-radius);outline:none;cursor:pointer}"; },
+        get: function () { return "*,:after,:before{-webkit-box-sizing:border-box;box-sizing:border-box}kp-button{display:-ms-inline-flexbox;display:inline-flex;outline:none}kp-button.kp-button--block{display:-ms-flexbox;display:flex}kp-button.kp-button--block .kp-button{width:100%}.kp-button{--btn-height:40px;--btn-padding-right:16px;--btn-padding-left:16px;--btn-default-text-color:#fff;--btn-default-bg-color:#00b8a7;--btn-default-active-bg-color:#00b3a2;--btn-border-color:#00b8a7;--btn-default-active-border-color:#00b8a7;--btn-border-width:1px;--btn-border-style:solid;--btn-border-radius:24px;display:-ms-flexbox;display:flex;padding-right:var(--btn-padding-right);padding-left:var(--btn-padding-left);height:var(--btn-height);-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;color:var(--btn-default-text-color);font-size:16px;font-weight:600;letter-spacing:-.22px;background-color:var(--btn-default-bg-color);border-color:var(--btn-border-color);border-style:var(--btn-border-style);border-width:var(--btn-border-width);border-radius:var(--btn-border-radius);outline:none;cursor:pointer;-webkit-transition:background-color .15s ease-in-out;transition:background-color .15s ease-in-out}.kp-button:active{background-color:var(--btn-default-active-bg-color)}.kp-button:active,.kp-button:focus,.kp-button:hover{-webkit-box-shadow:0 0 0 2px rgba(0,184,167,.25);box-shadow:0 0 0 2px rgba(0,184,167,.25);border-color:var(--btn-default-active-border-color)}"; },
         enumerable: true,
         configurable: true
     });
